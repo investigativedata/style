@@ -3,8 +3,9 @@ LOGOS_SRC_PNG = $(LOGOS:%=logos/rgb/transparent/IDIO_%.png)
 LOGOS_SRC_SVG = $(LOGOS:%=logos/rgb/transparent/IDIO_%.svg)
 LOGOS_DEST_PNG = $(LOGOS:%=%.png)
 LOGOS_DEST_SVG = $(LOGOS:%=%.svg)
+CSS_MINI = base.min.css style.min.css
 
-all: logos favicon.svg style.min.css
+all: clean logos favicon.svg $(CSS_MINI)
 
 install:
 	npm install
@@ -13,12 +14,17 @@ install:
 logos: $(LOGOS_SRC_PNG) $(LOGOS_SRC_SVG) $(LOGOS_DEST_PNG) $(LOGOS_DEST_SVG)
 
 %.svg:
-	cp logos/rgb/transparent/IDIO_basic_dark.svg $@
+	cp logos/rgb/transparent/IDIO_basic_dark.svg logo_$@
 %.png:
-	cp logos/rgb/transparent/IDIO_basic_dark.png $@
+	cp logos/rgb/transparent/IDIO_basic_dark.png logo_$@
+
+%.min.css:
+	node_modules/postcss-cli/index.js --no-map css/$*.css -u postcss-import -u postcss-url -u cssnano > $*.min.css
 
 favicon.svg:
 	cp logos/rgb/color/IDIO_circle_orange.svg favicon.svg
 
-style.min.css:
-	node_modules/postcss-cli/index.js --no-map style.css -u cssnano > style.min.css
+clean:
+	rm -rf *.png
+	rm -rf *.svg
+	rm -rf *.min.css

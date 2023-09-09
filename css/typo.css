@@ -1,0 +1,14 @@
+@import url("./fonts/inter/web/index.css");
+@import url("./fonts/sligoil/web/index.css");
+
+
+:root {
+  /* FONTS */
+  --font-family-sans: "Inter", "Liberation Sans", "Arial", sans-serif;
+  --font-family-mono: "Sligoil Micro", monospace;
+
+  --font-family-body: var(--font-family-sans);
+  --font-family-brand: var(--font-family-mono);
+
+  --font-size: 16px;
+}

@@ -1,0 +1,51 @@
+@import url("./vars.css");
+
+/* MODIFIERS */
+.--bg-primary {
+  color: var(--black);
+  background-color: var(--primary);
+}
+.--bg-secondary {
+  color: var(--black);
+  background-color: var(--secondary);
+}
+.--bg-inverted {
+  color: var(--secondary);
+  background-color: var(--black);
+}
+.--bg-neutral {
+  color: var(--black);
+  background-color: var(--neutral);
+}
+.--gap-xs {
+  gap: var(--XS);
+}
+.--gap-s {
+  gap: var(--S);
+}
+.--gap-m {
+  gap: var(--M);
+}
+.--gap-l {
+  gap: var(--L);
+}
+@media only screen and (min-width: 48em) {
+  .--hide-md {
+    display: none;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .--show-md {
+    display: none;
+  }
+}
+.--flex-row {
+  flex-direction: row;
+}
+.--flex-center {
+  align-items: center;
+}
+.--flex-columns {
+  display: flex;
+  flex-direction: column;
+}

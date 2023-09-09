@@ -1,0 +1,77 @@
+@import url("./vars.css");
+
+/* COMPONENTS */
+a {
+  color: inherit;
+}
+a:hover {
+  color: var(--primary);
+  transition: color var(--transition-duration);
+}
+small {
+  font-size: 0.9375rem;
+}
+small.smaller {
+  font-size: 0.625rem;
+}
+hr {
+  width: 100%;
+  border: none;
+  border-top: 0.25rem solid var(--black);
+}
+.button {
+  display: flex;
+  border-radius: var(--M);
+  border: 3px solid var(--black);
+  padding: var(--XS) var(--S);
+  align-items: center;
+  gap: var(--XS);
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--black);
+}
+.button:hover {
+  color: var(--primary);
+  background-color: var(--black);
+  transition: background-color var(--transition-duration),
+    color var(--transition-duration);
+}
+.button--inverted {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+.button--inverted:hover {
+  color: var(--black);
+  background-color: var(--secondary);
+}
+ul.list {
+  width: 100%;
+}
+.list,
+.list-item {
+  margin: 0;
+  padding: 0;
+}
+.list-item {
+  display: flex;
+  padding: var(--XS) var(--XS) var(--S) var(--XS);
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.3125rem;
+  font-style: normal;
+  font-weight: 700;
+  border-bottom: 2px dotted;
+}
+.list-item small {
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+}
+.list-item a {
+  color: inherit;
+  text-decoration: none;
+}
+.list-silent {
+  list-style-type: none;
+}
