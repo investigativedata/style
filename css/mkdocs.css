@@ -1,0 +1,36 @@
+/* BASE MKDOCS SETUP*/
+
+@import url("./fonts.css");
+@import url("./base.css");
+
+:root {
+  --md-code-font: var(--font-family-mono);
+  --md-text-font: var(--font-family-sans);
+  --md-default-fg-color: var(--black);
+  --md-primary-fg-color: var(--black);
+  --md-accent-fg-color: var(--primary);
+  --md-default-bg-color: var(--neutral);
+
+  --md-footer-bg-color: var(--black);
+}
+
+.md-header {
+  color: var(--secondary);
+}
+.md-header__title {
+  font-family: var(--font-family-mono);
+}
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  font-family: var(--font-family-mono);
+  font-weight: normal;
+}
+.md-header--shadow {
+  box-shadow: none;
+  transition: none;
+}
+
+a {
+  text-decoration: underline;
+}
+
