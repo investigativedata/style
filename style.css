@@ -161,6 +161,7 @@ a {
 }
 a:hover {
   color: var(--primary);
+  transition: color var(--transition-duration);
 }
 small {
   font-size: 0.9375rem;
