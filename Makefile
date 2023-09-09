@@ -19,7 +19,7 @@ logos: $(LOGOS_SRC_PNG) $(LOGOS_SRC_SVG) $(LOGOS_DEST_PNG) $(LOGOS_DEST_SVG)
 	cp logos/rgb/transparent/IDIO_basic_dark.png logo_$@
 
 %.min.css:
-	node_modules/postcss-cli/index.js --no-map css/$*.css -u postcss-import -u postcss-url -u autoprefixer -u cssnano > $*.min.css
+	node_modules/postcss-cli/index.js --no-map css/$*.css -u postcss-import -u postcss-url -u autoprefixer -u cssnano -o $*.min.css
 
 favicon.svg:
 	cp logos/rgb/color/IDIO_circle_orange.svg favicon.svg
