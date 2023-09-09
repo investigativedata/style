@@ -32,7 +32,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        cache: "npm"
+        with:
+          cache: "npm"
       - name: Install build deps
         run: npm install
       - name: Build
