@@ -23,7 +23,7 @@ jobs:
         run: make
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: --acl public-read --follow-symlinks --delete --exclude '.git*'
+          args: --acl public-read --follow-symlinks --exclude '.git*'
         env:
           AWS_S3_BUCKET: cdn.investigativedata.org
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
