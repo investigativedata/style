@@ -3,7 +3,7 @@ LOGOS_SRC_PNG = $(LOGOS:%=logos/rgb/transparent/IDIO_%.png)
 LOGOS_SRC_SVG = $(LOGOS:%=logos/rgb/transparent/IDIO_%.svg)
 LOGOS_DEST_PNG = $(LOGOS:%=%.png)
 LOGOS_DEST_SVG = $(LOGOS:%=%.svg)
-CSS_MINI = base.min.css style.min.css mkdocs.min.css
+CSS_MINI = base.min.css style.min.css fonts.min.css mkdocs.min.css
 
 all: clean logos favicon.svg $(CSS_MINI)
 
