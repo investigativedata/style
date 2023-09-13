@@ -8,7 +8,7 @@
   --md-primary-fg-color: var(--black);
   --md-accent-fg-color: var(--primary);
   --md-default-bg-color: var(--neutral);
-
+  --md-code-bg-color: var(--secondary);
   --md-footer-bg-color: var(--black);
 }
 
