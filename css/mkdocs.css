@@ -12,6 +12,13 @@
   --md-footer-bg-color: var(--black);
 }
 
+a {
+  text-decoration: underline;
+}
+pre,
+code {
+  font-family: var(--font-family-mono);
+}
 .md-header {
   color: var(--secondary);
 }
@@ -27,11 +34,6 @@
   box-shadow: none;
   transition: none;
 }
-
-a {
-  text-decoration: underline;
-}
-
-pre, code {
-  font-family: var(--font-family-mono);
+.md-nav__link {
+  text-decoration: none;
 }
