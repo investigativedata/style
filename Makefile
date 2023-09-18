@@ -14,9 +14,9 @@ install:
 logos: $(LOGOS_SRC_PNG) $(LOGOS_SRC_SVG) $(LOGOS_DEST_PNG) $(LOGOS_DEST_SVG)
 
 %.svg:
-	cp logos/rgb/transparent/IDIO_basic_dark.svg logo_$@
+	cp logos/rgb/transparent/cropped/IDIO_$*.svg logo_$@
 %.png:
-	cp logos/rgb/transparent/IDIO_basic_dark.png logo_$@
+	cp logos/rgb/transparent/IDIO_$*.png logo_$@
 
 %.min.css:
 	node_modules/postcss-cli/index.js --no-map css/$*.css -u postcss-import -u postcss-url -u postcss-dropdupedvars -u autoprefixer -u cssnano -o $*.min.css
