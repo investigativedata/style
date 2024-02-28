@@ -19,6 +19,28 @@ declare module "@mui/joy/Card" {
   interface CardPropsColorOverrides extends IPropsColorOverrides {}
 }
 
+const SIZES = {
+  lg: "35px",
+  md: "24px",
+  sm: "1rem",
+};
+
+const FORM_INPUT = {
+  defaultProps: {
+    size: "md",
+    variant: "outlined",
+  },
+  styleOverrides: {
+    root: {
+      padding: "10px",
+      borderRadius: "0",
+      borderWidth: "3px",
+      color: BLACK,
+      borderColor: BLACK,
+    },
+  },
+};
+
 export const components = {
   JoyLink: {
     styleOverrides: {
@@ -44,6 +66,16 @@ export const components = {
       },
     },
   },
+  JoyInput: FORM_INPUT,
+  JoySelect: FORM_INPUT,
+  JoyTextarea: FORM_INPUT,
+  JoyFormLabel: {
+    styleOverrides: {
+      root: {
+        fontSize: "24px",
+      },
+    },
+  },
   JoyButton: {
     defaultProps: {
       size: "lg",
@@ -53,7 +85,7 @@ export const components = {
     styleOverrides: {
       root: ({ ownerState }) => {
         return {
-          fontSize: "35px",
+          fontSize: SIZES[ownerState.size],
           fontStyle: "normal",
           fontWeight: 700,
           lineHeight: "120%" /* 42px */,
@@ -66,7 +98,7 @@ export const components = {
           backgroundColor: BACKGROUNDS[ownerState.color],
           [`&.${buttonClasses.root}:hover`]: {
             boxShadow: `2px 2px 0px 0px ${BLACK}`,
-            backgroundColor: "inherit",
+            backgroundColor: BACKGROUNDS[ownerState.color],
           },
           [`&.${buttonClasses.root}:active`]: {
             color: BACKGROUNDS[ownerState.color],
@@ -90,6 +122,13 @@ export const components = {
         borderRadius: "2rem",
         backgroundColor: BACKGROUNDS[ownerState.color],
       }),
+    },
+  },
+  JoyDivider: {
+    styleOverrides: {
+      root: {
+        borderTop: `4px solid ${BLACK}`,
+      },
     },
   },
 };

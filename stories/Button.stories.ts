@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Button from "@mui/joy/Button";
+import Button, { ButtonProps } from "@mui/joy/Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
+const meta: Meta<ButtonProps> = {
   title: "Atoms/Button",
   component: Button,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
@@ -12,7 +12,7 @@ const meta = {
   // argTypes: {
   //   backgroundColor: { control: "color" },
   // },
-} satisfies Meta<typeof Button>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
