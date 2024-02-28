@@ -2,9 +2,9 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "@mui/joy/Button";
 import Container from "@mui/joy/Container";
+import AspectRatio from "@mui/joy/AspectRatio";
 
 import { MediaHero } from "../src/sections/Hero";
-import AspectRatio from "@mui/joy/AspectRatio";
 
 const meta = {
   title: "Components/MediaHero",
@@ -30,7 +30,7 @@ export const Full: Story = {
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
     mediaComponent: (
       <AspectRatio>
-        <img src="/img/infra.jpg" />
+        <img src="./img/infra.jpg" />
       </AspectRatio>
     ),
     action: <Button>Click here</Button>,
@@ -44,7 +44,7 @@ export const MediaRight: Story = {
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
     mediaComponent: (
       <AspectRatio>
-        <img src="/img/infra.jpg" />
+        <img src="./img/infra.jpg" />
       </AspectRatio>
     ),
     mediaRight: true,

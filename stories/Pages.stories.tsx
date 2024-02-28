@@ -77,7 +77,7 @@ const Page = () => (
         </>
       }
     >
-      <img src="/img/infra.jpg" />,
+      <img src="./img/infra.jpg" />,
     </MediaScreen>
     <Screen background="success">
       <Typography level="h1">Lorem ipsum</Typography>

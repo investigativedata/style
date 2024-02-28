@@ -60,7 +60,7 @@ export default function OpenMoji({
   return (
     <AspectRatio variant="plain" ratio="1/1" sx={sx}>
       <img
-        src={`/openmoji/${variant}/svg/${iconData.hexcode}.svg`}
+        src={`./openmoji/${variant}/svg/${iconData.hexcode}.svg`}
         width="100"
         height="100"
       />
