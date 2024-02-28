@@ -5,7 +5,7 @@ import MediaScreen from "../src/sections/MediaScreen";
 import Link from "@mui/joy/Link";
 
 const meta = {
-  title: "Page/MediaScreen",
+  title: "Sections/MediaScreen",
   component: MediaScreen,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],

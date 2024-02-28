@@ -4,7 +4,7 @@ import Textarea from "@mui/joy/Textarea";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Atoms/Textarea",
+  title: "Form/Textarea",
   component: Textarea,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
