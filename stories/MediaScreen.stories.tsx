@@ -25,6 +25,6 @@ export const Default: Story = {
         Foto: <Link href="https://vicharster.com">Vic Harster</Link>
       </>
     ),
-    children: <img src="/img/infra.jpg" />,
+    children: <img src="./img/infra.jpg" />,
   },
 };
