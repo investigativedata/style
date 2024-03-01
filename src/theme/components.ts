@@ -3,6 +3,7 @@ import { BACKGROUNDS, BLACK } from "./colors";
 import { linkClasses } from "@mui/joy/Link";
 import { TypographyOwnerState } from "@mui/joy/Typography";
 import { CardOwnerState } from "@mui/joy/Card";
+import { ChipOwnerState } from "@mui/joy/Chip";
 
 const SIZES = {
   lg: "35px",
@@ -175,6 +176,32 @@ export const components = {
           color: BLACK,
         },
       },
+    },
+  },
+  JoyChip: {
+    defaultProps: {
+      size: "sm",
+      variant: "soft",
+    },
+    styleOverrides: {
+      root: ({ ownerState }: { ownerState: ChipOwnerState }) => ({
+        color: BLACK,
+        fontWeight: 400,
+        lineHeight: "130%",
+        ...(ownerState.size === "sm" && {
+          borderRadius: "1rem",
+          fontSize: "1rem",
+        }),
+        ...(ownerState.size === "md" && {
+          fontSize: "1.5rem",
+          borderRadius: "1.5rem",
+        }),
+        ...(ownerState.size === "lg" && {
+          padding: "0.25rem 1rem",
+          fontSize: "2.0rem",
+          borderRadius: "2rem",
+        }),
+      }),
     },
   },
 };
