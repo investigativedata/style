@@ -8,9 +8,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/index.html",
     }),
-    new webpack.ProvidePlugin({
-      React: "react",
-    }),
+    // new webpack.ProvidePlugin({
+    //   React: "react",
+    // }),
     // new CopyPlugin({
     //   patterns: [{ from: 'src/icons' }],
     // }),
