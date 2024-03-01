@@ -1,5 +1,5 @@
 import { buttonClasses } from "@mui/joy/Button";
-import { BACKGROUNDS, BLACK } from "./colors";
+import { BACKGROUNDS, BLACK, GREENS } from "./colors";
 import { linkClasses } from "@mui/joy/Link";
 
 interface IPropsColorOverrides {
@@ -108,6 +108,11 @@ export const components = {
       },
     },
   },
+  JoyIconButton: {
+    defaultProps: {
+      size: "lg",
+    },
+  },
   JoyCard: {
     defaultProps: {
       size: "md",
@@ -128,6 +133,38 @@ export const components = {
     styleOverrides: {
       root: {
         borderTop: `4px solid ${BLACK}`,
+      },
+    },
+  },
+  JoyModalClose: {
+    defaultProps: {
+      size: "lg",
+      color: "neutral",
+      sx: {
+        "&:hover": {
+          color: "inherit",
+          bgcolor: "inherit",
+        },
+        "& svg": {
+          width: "52px",
+          height: "52px",
+          stroke: 0,
+          fill: BLACK,
+        },
+      },
+    },
+  },
+  JoyDrawer: {
+    defaultProps: {
+      slotProps: {
+        content: {
+          sx: {
+            color: BLACK,
+            bgcolor: "#1DE9B6", // FIXME
+            padding: "10rem 4rem",
+            boxShadow: `-4px 4px 0px 0px ${BLACK}`,
+          },
+        },
       },
     },
   },
