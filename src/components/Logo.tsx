@@ -1,4 +1,3 @@
-import React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
 
 export type TLogoColor = "light" | "dark";

@@ -9,6 +9,7 @@ const theme = extendTheme({
     body: "Inter", // applies to `title-*` and `body-*`
   },
   typography,
+  // @ts-ignore
   components,
   colorSchemes: {
     light: {

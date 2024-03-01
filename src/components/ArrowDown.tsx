@@ -1,4 +1,3 @@
-import React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
 import { ColorPaletteProp } from "@mui/joy/styles";
 

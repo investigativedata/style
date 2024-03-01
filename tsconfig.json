@@ -18,11 +18,14 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "declaration": true,
+    "outDir": "dist"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
+    "stories",
     "build",
     "coverage",
     "webpack.*.js",

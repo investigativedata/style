@@ -1,18 +1,17 @@
-import React from "react";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
 
 interface ISectionHeader {
-  readonly topMark?: string;
+  readonly tagLine?: string;
   readonly title: string;
 }
 
-export default function SectionHeader({ topMark, title }: ISectionHeader) {
+export default function SectionHeader({ tagLine, title }: ISectionHeader) {
   return (
     <Box>
-      {topMark && (
+      {tagLine && (
         <Typography level="h3" sx={{ p: 0 }}>
-          {topMark}
+          {tagLine}
         </Typography>
       )}
       <Typography level="h2">{title}</Typography>

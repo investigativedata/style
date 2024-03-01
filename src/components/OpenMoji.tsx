@@ -1,4 +1,3 @@
-import React from "react";
 import { ColorPaletteProp } from "@mui/joy/styles";
 import AspectRatio from "@mui/joy/AspectRatio";
 import openmoji from "openmoji";
