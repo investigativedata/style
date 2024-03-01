@@ -112,16 +112,18 @@ const Form = () => (
         </Stack>
       </Stack>
 
-      <CardOverflow sx={{ borderTop: "1px solid", borderColor: "divider" }}>
-        <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
-          <Button size="md" color="success">
-            Save
-          </Button>
-          <Button size="md" type="reset" disabled={true}>
-            Reset
-          </Button>
-        </CardActions>
-      </CardOverflow>
+      <Divider />
+      <CardActions sx={{ alignSelf: "flex-end", pt: 2 }}>
+        <Button size="md" color="success">
+          Save
+        </Button>
+        <Button size="md" type="reset" disabled={true}>
+          Reset
+        </Button>
+        <Button size="md" color="warning">
+          Cancel
+        </Button>
+      </CardActions>
     </Card>
   </Stack>
 );
@@ -130,7 +132,7 @@ const meta = {
   title: "Examples/Form",
   component: Form,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-//   tags: ["autodocs"],
+  //   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   // argTypes: {
   //   backgroundColor: { control: "color" },

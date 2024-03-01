@@ -1,62 +1,14 @@
 import { extendTheme } from "@mui/joy/styles";
 import { BACKGROUNDS, BLACK, PALETTE, WHITE } from "./colors";
 import { components } from "./components";
+import { typography } from "./typography";
 
 const theme = extendTheme({
   fontFamily: {
     display: "Inter", // applies to `h1`–`h4`
     body: "Inter", // applies to `title-*` and `body-*`
   },
-  typography: {
-    h1: {
-      fontSize: "4.375rem",
-      fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "120%",
-    },
-    h2: {
-      fontSize: "2.5rem",
-      fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "130%",
-      letterSpacing: "-0.03rem",
-    },
-    h3: {
-      fontSize: "1.5rem",
-      fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "130%",
-      letterSpacing: "-0.03rem",
-    },
-    "title-lg": {
-      fontSize: "2.5rem",
-      fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "130%",
-      letterSpacing: "-0.05rem",
-    },
-    "body-lg": {
-      fontSize: "2.5rem",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "130%",
-      letterSpacing: "-0.05rem",
-    },
-    // FIXME conver to rem
-    "body-md": {
-      fontSize: "24px",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "31.2px",
-      letterSpacing: "-2%",
-    },
-    "body-sm": {
-      fontSize: "1rem",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "20.8px",
-    },
-  },
+  typography,
   components,
   colorSchemes: {
     light: {

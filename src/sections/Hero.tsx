@@ -8,7 +8,7 @@ import OpenMoji from "../components/OpenMoji";
 
 interface IHeroBase {
   readonly title?: string;
-  readonly topMark?: string;
+  readonly tagLine?: string;
   readonly teaser?: React.ReactNode;
   readonly action?: React.ReactNode;
 }
@@ -18,10 +18,10 @@ interface IHeroSection extends IHeroBase {
   readonly iconRight?: boolean;
 }
 
-const HeroContent = ({ title, topMark, teaser, action }: IHeroBase) => {
+const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
   return (
     <>
-      {title && <SectionHeader title={title} topMark={topMark} />}
+      {title && <SectionHeader title={title} tagLine={tagLine} />}
       {teaser && <Typography>{teaser}</Typography>}
       {action}
     </>
@@ -43,7 +43,7 @@ const HeroBase = ({
 
 export default function Hero({
   title,
-  topMark,
+  tagLine,
   teaser,
   icon,
   iconRight,
@@ -58,7 +58,7 @@ export default function Hero({
   const Content = (
     <HeroContent
       title={title}
-      topMark={topMark}
+      tagLine={tagLine}
       teaser={teaser}
       action={action}
     />
@@ -75,7 +75,7 @@ interface IMediaHero extends IHeroBase {
 
 export function MediaHero({
   title,
-  topMark,
+  tagLine,
   teaser,
   mediaComponent,
   mediaRight,
@@ -89,7 +89,7 @@ export function MediaHero({
   const Content = (
     <HeroContent
       title={title}
-      topMark={topMark}
+      tagLine={tagLine}
       teaser={teaser}
       action={action}
     />

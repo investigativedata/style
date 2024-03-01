@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Full: Story = {
   args: {
-    topMark: "A small top mark",
+    tagLine: "A small tagline",
     title: "A big headline for this hero",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",

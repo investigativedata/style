@@ -13,16 +13,10 @@ const Paragraph = `
     ut est reprehenderit sed dolorum. Saepe labore aliquid perferendis in.
 `;
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: "Typography",
   component: Typography,
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  // argTypes: {
-  //   backgroundColor: { control: "color" },
-  // },
   decorators: [
     (Story) => (
       <div style={{ maxWidth: "500px" }}>

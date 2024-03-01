@@ -15,7 +15,7 @@ export default function SectionHeader({ topMark, title }: ISectionHeader) {
           {topMark}
         </Typography>
       )}
-      <Typography level="h1">{title}</Typography>
+      <Typography level="h2">{title}</Typography>
     </Box>
   );
 }
