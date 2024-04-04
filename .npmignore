@@ -1,5 +1,6 @@
 */**
 
 !package.json
-!src
+!src/index.ts
+!src/**/*
 !README.md
