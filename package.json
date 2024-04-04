@@ -4,9 +4,6 @@
   "description": "Style (guide) and React components for investigativedata.io",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -24,14 +21,14 @@
   "homepage": "https://github.com/investigativedata/style#readme",
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/joy": "^5.0.0-beta.32"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.11",
-    "@mui/joy": "^5.0.0-beta.29",
-    "@rive-app/react-canvas-lite": "^4.8.3"
+    "@rive-app/react-canvas-lite": "^4.8.4"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",
