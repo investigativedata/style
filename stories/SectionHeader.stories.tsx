@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "Headline of the section",
-    topMark: "A small top mark"
+    tagLine: "A small top mark"
   },
 };
 

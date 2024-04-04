@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Box from "@mui/joy/Box";
 
@@ -22,13 +21,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    icon: "woman raising hand",
+    icon: "person-trump",
   },
 };
 
 export const SXProps: Story = {
   args: {
-    icon: "woman raising hand",
+    icon: "person-trump",
     sx: { padding: 10 },
   },
 };

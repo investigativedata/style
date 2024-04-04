@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Button, { ButtonProps } from "@mui/joy/Button";
 import MuiDrawer from "@mui/joy/Drawer";
 import DialogContent from "@mui/joy/DialogContent";

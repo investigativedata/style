@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "@mui/joy/Button";
 import Container from "@mui/joy/Container";
@@ -28,7 +27,7 @@ export const Full: Story = {
     title: "A big headline for this hero",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
-    icon: "gear",
+    icon: "person-trump",
     action: <Button>Click here</Button>,
   },
 };
@@ -38,7 +37,7 @@ export const IconRight: Story = {
     title: "Icon on the right side",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
-    icon: "gear",
+    icon: "person-trump",
     iconRight: true,
   },
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "@mui/joy/Button";
 import Container from "@mui/joy/Container";
@@ -24,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Full: Story = {
   args: {
-    topMark: "A small top mark",
+    tagLine: "A small top mark",
     title: "A big headline for this hero",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",

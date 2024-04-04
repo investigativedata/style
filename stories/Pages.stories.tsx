@@ -1,4 +1,3 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Typography from "@mui/joy/Typography";
 import Grid from "@mui/joy/Grid";
@@ -26,7 +25,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="woman teacher"
+            icon="person-trump"
             title="Card title"
             sx={{ height: "100%" }}
           >
@@ -38,7 +37,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="code editor"
+            icon="person-trump"
             title="Short text"
             sx={{ height: "100%" }}
             action={<Button color="danger">Click here</Button>}
@@ -49,7 +48,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="forward"
+            icon="person-trump"
             title="Long text"
             sx={{ height: "100%" }}
           >
@@ -63,10 +62,10 @@ const Page = () => (
     </Screen>
     <Screen background="warning">
       <Hero
-        topMark="A small top mark"
+        tagLine="A small top mark"
         title="A very big hero headline"
         teaser="Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae."
-        icon="spaghetti"
+        icon="person-trump"
         action={<Button color="warning">Click here</Button>}
       />
     </Screen>

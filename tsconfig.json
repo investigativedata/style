@@ -22,10 +22,9 @@
     "declaration": true,
     "outDir": "dist"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "stories/*.tsx"],
   "exclude": [
     "node_modules",
-    "stories",
     "build",
     "coverage",
     "webpack.*.js",
