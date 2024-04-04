@@ -6,7 +6,7 @@ import Typography from "@mui/joy/Typography";
 import SectionHeader from "../components/SectionHeader";
 import OpenMoji from "../components/OpenMoji";
 
-interface IHeroBase {
+export interface IHeroBase {
   readonly title?: string;
   readonly tagLine?: string;
   readonly teaser?: React.ReactNode;
@@ -18,7 +18,7 @@ interface IHeroSection extends IHeroBase {
   readonly iconRight?: boolean;
 }
 
-const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
+export const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
   return (
     <>
       {title && <SectionHeader title={title} tagLine={tagLine} />}
@@ -28,7 +28,7 @@ const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
   );
 };
 
-const HeroBase = ({
+export const HeroBase = ({
   left,
   right,
 }: {
@@ -65,36 +65,5 @@ export default function Hero({
   );
   const left = iconRight ? Content : Icon;
   const right = iconRight ? Icon : Content;
-  return <HeroBase left={left} right={right} />;
-}
-
-interface IMediaHero extends IHeroBase {
-  readonly mediaComponent: React.ReactNode;
-  readonly mediaRight?: boolean;
-}
-
-export function MediaHero({
-  title,
-  tagLine,
-  teaser,
-  mediaComponent,
-  mediaRight,
-  action,
-}: IMediaHero) {
-  const Media = (
-    <Box maxWidth="sm" justifyContent={mediaRight ? "right" : "left"}>
-      {mediaComponent}
-    </Box>
-  );
-  const Content = (
-    <HeroContent
-      title={title}
-      tagLine={tagLine}
-      teaser={teaser}
-      action={action}
-    />
-  );
-  const left = mediaRight ? Content : Media;
-  const right = mediaRight ? Media : Content;
   return <HeroBase left={left} right={right} />;
 }

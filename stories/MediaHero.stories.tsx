@@ -3,7 +3,7 @@ import Button from "@mui/joy/Button";
 import Container from "@mui/joy/Container";
 import AspectRatio from "@mui/joy/AspectRatio";
 
-import { MediaHero } from "../src/sections/Hero";
+import MediaHero from "../src/sections/MediaHero";
 
 const meta = {
   title: "Components/MediaHero",
