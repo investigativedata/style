@@ -6,10 +6,7 @@ import React from "react";
 import MuiButton, { ButtonProps } from "@mui/joy/Button";
 import MuiChip, { ChipProps } from "@mui/joy/Chip";
 
-type TButton = Pick<
-  ButtonProps,
-  "color" | "disabled" | "size" | "variant" | "loading"
->;
+type TButton = Pick<ButtonProps, "color" | "disabled" | "size" | "loading">;
 
 export function Button(props: React.PropsWithChildren<TButton>) {
   return <MuiButton {...props} />;
