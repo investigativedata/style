@@ -18,7 +18,9 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "declaration": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "stories/*.tsx"],
   "exclude": [
