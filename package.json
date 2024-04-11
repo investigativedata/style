@@ -2,8 +2,8 @@
   "name": "@investigativedata/style",
   "version": "0.1.0",
   "description": "Style (guide) and React components for investigativedata.io",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
