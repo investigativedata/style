@@ -1,6 +1,6 @@
 {
   "name": "@investigativedata/style",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Style (guide) and React components for investigativedata.io",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "dev": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-storybook": "storybook build",
-    "build": "tsc"
+    "build": "rm -rf dist ; tsc"
   },
   "repository": {
     "type": "git",
