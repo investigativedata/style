@@ -30,7 +30,7 @@ export default function MediaHero({
     />
   );
   return (
-    <Grid container alignItems="center" alignContent="center" spacing={8}>
+    <Grid container alignItems="center" alignContent="center" spacing={8} sx={{ width: '100%' }}>
       <Grid md={6} order={{ sm: 1, md: mediaRight ? 1 : 2 }} >{Content}</Grid>
       <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>{Media}</Grid>
     </Grid>
