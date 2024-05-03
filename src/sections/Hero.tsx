@@ -52,8 +52,8 @@ export default function Hero({
   
   return (
     <Grid container alignItems="center" alignContent="center" spacing={8}>
-      <Grid md={6} order={{ xs: 1, sm: iconRight ? 2 : 1 }} >{Icon}</Grid>
-      <Grid md={6} order={{ xs: 1, sm: iconRight ? 1 : 2}}>{Content}</Grid>
+      <Grid md={6} order={{ sm: 1, md: iconRight ? 2 : 1 }} >{Icon}</Grid>
+      <Grid md={6} order={{ sm: 1, md: iconRight ? 1 : 2}}>{Content}</Grid>
     </Grid>
   );
 }

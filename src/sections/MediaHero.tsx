@@ -31,8 +31,8 @@ export default function MediaHero({
   );
   return (
     <Grid container alignItems="center" alignContent="center" spacing={8}>
-      <Grid md={6} order={{ xs: 1, sm: mediaRight ? 1 : 2 }} >{Content}</Grid>
-      <Grid md={6} order={{ xs: 1, sm: mediaRight ? 2 : 1 }}>{Media}</Grid>
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 1 : 2 }} >{Content}</Grid>
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>{Media}</Grid>
     </Grid>
   );
 }
