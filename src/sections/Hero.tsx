@@ -28,19 +28,6 @@ export const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
   );
 };
 
-export const HeroBase = ({
-  left,
-  right,
-}: {
-  left: React.ReactNode;
-  right: React.ReactNode;
-}) => (
-  <Grid container alignItems="center" alignContent="center" spacing={8}>
-    {left && <Grid md={6}>{left}</Grid>}
-    {right && <Grid md={6}>{right}</Grid>}
-  </Grid>
-);
-
 export default function Hero({
   title,
   tagLine,
@@ -49,10 +36,9 @@ export default function Hero({
   iconRight,
   action,
 }: IHeroSection) {
-  const iconSx = iconRight ? { pl: 6 } : { pr: 6 };
   const Icon = icon ? (
     <Box maxWidth="sm">
-      <OpenMoji icon={icon} sx={iconSx} />
+      <OpenMoji icon={icon} sx={{ p: 6}} />
     </Box>
   ) : null;
   const Content = (
@@ -63,7 +49,11 @@ export default function Hero({
       action={action}
     />
   );
-  const left = iconRight ? Content : Icon;
-  const right = iconRight ? Icon : Content;
-  return <HeroBase left={left} right={right} />;
+  
+  return (
+    <Grid container alignItems="center" alignContent="center" spacing={8}>
+      <Grid md={6} order={{ xs: 1, sm: iconRight ? 2 : 1 }} >{Icon}</Grid>
+      <Grid md={6} order={{ xs: 1, sm: iconRight ? 1 : 2}}>{Content}</Grid>
+    </Grid>
+  );
 }
