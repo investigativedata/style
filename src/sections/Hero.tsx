@@ -51,7 +51,15 @@ export default function Hero({
   );
   
   return (
-    <Grid container alignItems="center" alignContent="center" spacing={8}>
+    <Grid
+      container
+      alignItems="center"
+      alignContent="center"
+      justifyContent="center"
+      spacing={8}
+      width="100%"
+      margin="0"
+    >
       <Grid md={6} order={{ sm: 1, md: iconRight ? 2 : 1 }} >{Icon}</Grid>
       <Grid md={6} order={{ sm: 1, md: iconRight ? 1 : 2}}>{Content}</Grid>
     </Grid>
