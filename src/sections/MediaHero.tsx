@@ -1,6 +1,7 @@
 import Box from "@mui/joy/Box";
 import type { IHeroBase } from "./Hero";
-import { HeroBase, HeroContent } from "./Hero";
+import { HeroContent } from "./Hero";
+import Grid from "@mui/joy/Grid";
 
 interface IMediaHero extends IHeroBase {
   readonly mediaComponent: React.ReactNode;
@@ -16,7 +17,7 @@ export default function MediaHero({
   action,
 }: IMediaHero) {
   const Media = (
-    <Box maxWidth="sm" justifyContent={mediaRight ? "right" : "left"}>
+    <Box maxWidth="sm">
       {mediaComponent}
     </Box>
   );
@@ -28,7 +29,18 @@ export default function MediaHero({
       action={action}
     />
   );
-  const left = mediaRight ? Content : Media;
-  const right = mediaRight ? Media : Content;
-  return <HeroBase left={left} right={right} />;
+  return (
+    <Grid
+      container
+      alignItems="center"
+      alignContent="center"
+      justifyContent="center"
+      spacing={8}
+      width="100%"
+      margin="0"
+    >
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 1 : 2 }} >{Content}</Grid>
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>{Media}</Grid>
+    </Grid>
+  );
 }
