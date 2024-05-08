@@ -6,8 +6,8 @@ import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
 
 const SIZES = {
-  lg: "35px",
-  md: "24px",
+  lg: "clamp(1.5rem, 7vw, 2.5rem)",
+  md: "clamp(1rem, 7vw, 1.5rem)",
   sm: "1rem",
 };
 

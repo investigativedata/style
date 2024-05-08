@@ -22,7 +22,7 @@
     "declaration": true,
     "outDir": "dist"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "stories/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "build",
