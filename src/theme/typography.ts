@@ -4,7 +4,7 @@ type Typography = Partial<TypographySystemOptions>;
 
 export const typography: Typography = {
   h1: {
-    fontSize: "clamp(2.5rem, 7vw, 6rem)",
+    fontSize: "clamp(2.5rem, 7vw, 5rem)",
     fontFamily: "Sligoil Micro",
     fontStyle: "normal",
     fontWeight: 400,

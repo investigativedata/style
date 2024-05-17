@@ -14,7 +14,7 @@ export default function SectionHeader({ tagLine, title }: ISectionHeader) {
           {tagLine}
         </Typography>
       )}
-      <Typography level="h2">{title}</Typography>
+      <Typography level="h1">{title}</Typography>
     </Box>
   );
 }
