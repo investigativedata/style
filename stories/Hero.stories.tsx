@@ -27,7 +27,8 @@ export const Full: Story = {
     title: "A big headline for this hero",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
-    icon: "person-trump",
+    mediaSrc: "./mojis/person-trump.svg",
+    mediaRatio: "1/1",
     action: <Button>Click here</Button>,
   },
 };
@@ -37,15 +38,28 @@ export const IconRight: Story = {
     title: "Icon on the right side",
     teaser:
       "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
-    icon: "person-trump",
-    iconRight: true,
+    mediaSrc: "./mojis/person-trump.svg",
+    mediaRatio: "1/1",
+    mediaRight: true,
+  },
+};
+
+export const ImageRight: Story = {
+  args: {
+    title: "Image on the right side",
+    teaser:
+      "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
+    mediaSrc: "./img/infra.jpg",
+    mediaBorder: true,
+    mediaRight: true,
   },
 };
 
 export const NoTeaser: Story = {
   args: {
     title: "This is a hero with only a headline and an OpenMoji logo.",
-    icon: "teacher",
+    mediaSrc: "./mojis/person-trump.svg",
+    mediaRatio: "1/1",
   },
 };
 
@@ -58,7 +72,8 @@ export const NoTitle: Story = {
         OpenMoji logo.
       </>
     ),
-    icon: "teacher",
+    mediaSrc: "./mojis/person-trump.svg",
+    mediaRatio: "1/1",
   },
 };
 

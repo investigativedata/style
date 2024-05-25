@@ -4,6 +4,7 @@ import { linkClasses } from "@mui/joy/Link";
 import { TypographyOwnerState } from "@mui/joy/Typography";
 import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
+import { AspectRatioOwnerState } from "@mui/joy";
 
 const SIZES = {
   lg: "clamp(1.5rem, 7vw, 2.5rem)",
@@ -156,6 +157,7 @@ export const components = {
   },
   JoyDrawer: {
     defaultProps: {
+      anchor: "right",
       slotProps: {
         content: {
           sx: {
@@ -200,6 +202,22 @@ export const components = {
           padding: "0.25rem 1rem",
           fontSize: "2.0rem",
           borderRadius: "2rem",
+        }),
+      }),
+    },
+  },
+  JoyAspectRatio: {
+    defaultProps: {
+      variant: "outlined",
+      border: 0,
+      boxShadow: 0,
+    },
+    styleOverrides: {
+      root: ({ ownerState }: { ownerState: AspectRatioOwnerState }) => ({
+        ...(ownerState.variant === "outlined" && {
+          border: "4px solid",
+          borderColor: BLACK,
+          boxShadow: `4px 4px 0px 0px ${BLACK}`,
         }),
       }),
     },

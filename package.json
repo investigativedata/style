@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.5.4",
     "@rive-app/react-canvas-lite": "^4.8.4"
   },
   "devDependencies": {

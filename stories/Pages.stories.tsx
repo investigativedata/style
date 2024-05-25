@@ -25,7 +25,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Card title"
             sx={{ height: "100%" }}
           >
@@ -37,7 +37,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Short text"
             sx={{ height: "100%" }}
             action={<Button color="danger">Click here</Button>}
@@ -48,7 +48,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Long text"
             sx={{ height: "100%" }}
           >
@@ -65,7 +65,8 @@ const Page = () => (
         tagLine="A small top mark"
         title="A very big hero headline"
         teaser="Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae."
-        icon="person-trump"
+        mediaSrc="./img/infra.jpg"
+        mediaBorder={true}
         action={<Button color="warning">Click here</Button>}
       />
     </Screen>

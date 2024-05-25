@@ -15,7 +15,7 @@ export default function Logo({
   color = DEFAULT_COLOR,
   variant = DEFAULT_VARIANT,
 }: ILogo) {
-  const src = `./logos/rgb/transparent/IDIO_${variant}_${color}.svg`;
+  const src = `https://cdn.investigativedata.org/style/logos/rgb/transparent/IDIO_${variant}_${color}.svg`;
   return (
     <AspectRatio style={{ width: "100px" }} variant="plain">
       <img src={src} />

@@ -5,11 +5,13 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 
 interface IScreen {
-  readonly background: ColorPaletteProp;
+  readonly maxWidth?: "sm" | "md" | "lg" | "xl";
+  readonly background?: ColorPaletteProp;
 }
 
 export default function Screen({
-  background,
+  background = "neutral",
+  maxWidth = "xl",
   children,
 }: React.PropsWithChildren<IScreen>) {
   return (
@@ -24,7 +26,7 @@ export default function Screen({
         minHeight: "100vh",
       }}
     >
-      <Container maxWidth="xl">{children}</Container>
+      <Container maxWidth={maxWidth}>{children}</Container>
     </Box>
   );
 }

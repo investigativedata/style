@@ -19,11 +19,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    credits: (
-      <>
-        Foto: <Link href="https://vicharster.com">Vic Harster</Link>
-      </>
-    ),
     children: <img src="./img/infra.jpg" />,
   },
 };

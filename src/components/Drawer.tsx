@@ -1,44 +1,27 @@
 import React from "react";
-import Button, { ButtonProps } from "@mui/joy/Button";
 import MuiDrawer from "@mui/joy/Drawer";
 import DialogContent from "@mui/joy/DialogContent";
 import DialogTitle from "@mui/joy/DialogTitle";
 import ModalClose from "@mui/joy/ModalClose";
-import IconButton, { IconButtonProps } from "@mui/joy/IconButton";
 import Link, { LinkProps } from "@mui/joy/Link";
 import { BLACK } from "../theme/colors";
 import { SxProps } from "@mui/joy/styles/types";
+import Burger from "./Burger";
 
 interface IDrawer {
   readonly anchor?: "bottom" | "left" | "right" | "top";
-  readonly openIcon?: React.ReactNode;
-  readonly iconButtonProps?: IconButtonProps;
-  readonly buttonContent?: React.ReactNode;
-  readonly buttonProps?: ButtonProps;
   readonly title?: string;
 }
 
 export default function Drawer({
   children,
-  anchor = "left",
+  anchor,
   title,
-  buttonContent,
-  buttonProps = {},
-  iconButtonProps = {},
-  openIcon,
 }: React.PropsWithChildren<IDrawer>) {
   const [open, setOpen] = React.useState(false);
-  buttonProps.onClick = () => setOpen(true);
-  iconButtonProps.onClick = () => setOpen(true);
-  const ButtonComponent = () =>
-    openIcon ? (
-      <IconButton {...iconButtonProps}>{openIcon}</IconButton>
-    ) : (
-      <Button {...buttonProps}>{buttonContent}</Button>
-    );
   return (
     <>
-      <ButtonComponent />
+      <Burger onClick={() => setOpen(true)} />
       <MuiDrawer open={open} onClose={() => setOpen(false)} anchor={anchor}>
         <ModalClose />
         {title && <DialogTitle>{title}</DialogTitle>}

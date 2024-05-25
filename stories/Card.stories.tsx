@@ -40,7 +40,7 @@ export const Default: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: "woman raising hand",
+    icon: "./mojis/person-trump.svg",
     title: "Card title",
     children: <ExampleContent />,
   },

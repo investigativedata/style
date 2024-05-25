@@ -4,7 +4,7 @@ import CardActions from "@mui/joy/CardActions";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 
-import OpenMoji from "./OpenMoji";
+import Image from "./Image";
 
 interface ICardProps extends CardProps {
   readonly title: string;
@@ -21,7 +21,7 @@ export default function Card({
 }: React.PropsWithChildren<ICardProps>) {
   return (
     <MuiCard {...props}>
-      {icon && <OpenMoji icon={icon} />}
+      {icon && <Image src={icon} ratio="1/1" variant="plain" />}
       <Typography level="title-lg" sx={{ pb: 1 }}>
         {title}
       </Typography>

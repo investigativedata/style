@@ -5,15 +5,15 @@ import Link from "@mui/joy/Link";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 import { ColorPaletteProp } from "@mui/joy/styles";
-import Logo, { TLogoColor, TLogoVariant } from "./Logo";
-import ArrowDown from "./ArrowDown";
 import { BACKGROUND_VARS } from "../theme/colors";
+import AnimatedLogo from "./AnimatedLogo";
+import Burger from "./Burger";
 
 interface IHeaderProps {
   readonly homepage?: string;
   readonly color?: ColorPaletteProp;
-  readonly logoColor?: TLogoColor;
-  readonly logoVariant?: TLogoVariant;
+  readonly section?: string;
+  readonly drawer?: React.ReactNode;
 }
 
 interface IStackItem {
@@ -29,9 +29,9 @@ const StackItem = ({
 
 export default function Header({
   color = "neutral",
-  logoColor,
-  logoVariant,
   homepage = "investigativedata.io",
+  section,
+  drawer,
 }: IHeaderProps) {
   return (
     <Box
@@ -48,9 +48,17 @@ export default function Header({
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
+          height="110px"
         >
           <StackItem justifyContent="left">
-            <Typography level="h3" sx={{ fs: "1.3125rem", p: 0 }}>
+            <Typography
+              level="h3"
+              sx={{
+                fs: "1.3125rem",
+                p: 0,
+              }}
+              fontWeight={section ? 400 : 700}
+            >
               <Link
                 sx={{
                   color: "inherit",
@@ -61,14 +69,13 @@ export default function Header({
               >
                 {homepage}
               </Link>
+              {section && <strong> {section}</strong>}
             </Typography>
           </StackItem>
           <StackItem justifyContent="center">
-            <Logo color={logoColor} variant={logoVariant} />
+            <AnimatedLogo />
           </StackItem>
-          <StackItem justifyContent="right">
-            <ArrowDown color={color} />
-          </StackItem>
+          <StackItem justifyContent="right">{drawer || <Burger />}</StackItem>
         </Stack>
       </Container>
     </Box>

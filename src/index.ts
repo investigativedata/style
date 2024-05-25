@@ -6,7 +6,7 @@ export { default as Card } from "./components/Card";
 export { default as Drawer } from "./components/Drawer";
 export { default as Header } from "./components/Header";
 export { default as Logo } from "./components/Logo";
-export { default as OpenMoji } from "./components/OpenMoji";
+export { default as Image } from "./components/Image";
 export { default as SectionHeader } from "./components/SectionHeader";
 
 export { default as Hero } from "./sections/Hero";

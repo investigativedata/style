@@ -4,52 +4,46 @@ import Grid from "@mui/joy/Grid";
 import Typography from "@mui/joy/Typography";
 
 import SectionHeader from "../components/SectionHeader";
-import OpenMoji from "../components/OpenMoji";
+import Image from "../components/Image";
 
-export interface IHeroBase {
+interface IHero {
   readonly title?: string;
   readonly tagLine?: string;
   readonly teaser?: React.ReactNode;
   readonly action?: React.ReactNode;
+  readonly mediaType?: "image";
+  readonly mediaSrc?: string;
+  readonly mediaRight?: boolean;
+  readonly mediaBorder?: boolean;
+  readonly mediaRatio?: string;
 }
 
-interface IHeroSection extends IHeroBase {
-  readonly icon?: string;
-  readonly iconRight?: boolean;
-}
-
-export const HeroContent = ({ title, tagLine, teaser, action }: IHeroBase) => {
-  return (
+export default function Hero({
+  title,
+  tagLine,
+  teaser,
+  mediaSrc,
+  mediaRight,
+  mediaBorder,
+  mediaRatio,
+  action,
+}: IHero) {
+  const Media = mediaSrc ? (
+    <Box maxWidth="sm" sx={{ p: 6 }}>
+      <Image
+        src={mediaSrc}
+        variant={mediaBorder ? "outlined" : "plain"}
+        ratio={mediaRatio}
+      />
+    </Box>
+  ) : null;
+  const Content = (
     <>
       {title && <SectionHeader title={title} tagLine={tagLine} />}
       {teaser && <Typography>{teaser}</Typography>}
       {action}
     </>
   );
-};
-
-export default function Hero({
-  title,
-  tagLine,
-  teaser,
-  icon,
-  iconRight,
-  action,
-}: IHeroSection) {
-  const Icon = icon ? (
-    <Box maxWidth="sm">
-      <OpenMoji icon={icon} sx={{ p: 6}} />
-    </Box>
-  ) : null;
-  const Content = (
-    <HeroContent
-      title={title}
-      tagLine={tagLine}
-      teaser={teaser}
-      action={action}
-    />
-  );
-  
   return (
     <Grid
       container
@@ -60,8 +54,12 @@ export default function Hero({
       width="100%"
       margin="0"
     >
-      <Grid md={6} order={{ sm: 1, md: iconRight ? 2 : 1 }} >{Icon}</Grid>
-      <Grid md={6} order={{ sm: 1, md: iconRight ? 1 : 2}}>{Content}</Grid>
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>
+        {Media}
+      </Grid>
+      <Grid md={6} order={{ sm: 1, md: mediaRight ? 1 : 2 }}>
+        {Content}
+      </Grid>
     </Grid>
   );
 }
