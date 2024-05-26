@@ -61,6 +61,16 @@ const Page = () => (
       </Grid>
     </Screen>
     <Screen background="warning">
+      <Typography level="h1">A big section title</Typography>
+      <Hero
+        tagLine="A small top mark"
+        title="A very big hero headline"
+        teaser="Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae."
+        mediaSrc="./img/infra.jpg"
+        mediaBorder={true}
+        mediaRight={true}
+        action={<Button color="warning">Click here</Button>}
+      />
       <Hero
         tagLine="A small top mark"
         title="A very big hero headline"

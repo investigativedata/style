@@ -33,6 +33,19 @@ export const Full: Story = {
   },
 };
 
+export const TitleLevelH1: Story = {
+  args: {
+    tagLine: "A small tagline",
+    title: "A very big headline for this hero",
+    titleLevel: "h1",
+    teaser:
+      "Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae.",
+    mediaSrc: "./mojis/person-trump.svg",
+    mediaRatio: "1/1",
+    action: <Button>Click here</Button>,
+  },
+};
+
 export const IconRight: Story = {
   args: {
     title: "Icon on the right side",
