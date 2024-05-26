@@ -7,6 +7,7 @@ import Link, { LinkProps } from "@mui/joy/Link";
 import { BLACK } from "../theme/colors";
 import { SxProps } from "@mui/joy/styles/types";
 import Burger from "./Burger";
+import { FONT_SIZES } from "../theme/components";
 
 interface IDrawer {
   readonly anchor?: "bottom" | "left" | "right" | "top";
@@ -25,7 +26,7 @@ export default function Drawer({
       <MuiDrawer open={open} onClose={() => setOpen(false)} anchor={anchor}>
         <ModalClose />
         {title && <DialogTitle>{title}</DialogTitle>}
-        <DialogContent>{children}</DialogContent>
+        <DialogContent sx={{ alignItems: "start" }}>{children}</DialogContent>
       </MuiDrawer>
     </>
   );
@@ -33,10 +34,10 @@ export default function Drawer({
 
 const LinkSX: SxProps = {
   color: BLACK,
-  fontSize: "2.5rem",
+  fontSize: FONT_SIZES.lg,
   fontWeight: 500,
   lineHeight: "130%",
-  mb: "4rem",
+  mb: "3rem",
   textDecoration: "none",
   "&:hover": {
     textDecoration: "underline",
