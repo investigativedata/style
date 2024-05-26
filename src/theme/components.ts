@@ -6,7 +6,7 @@ import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
 import { AspectRatioOwnerState } from "@mui/joy";
 
-const SIZES = {
+export const FONT_SIZES = {
   lg: "clamp(1.5rem, 7vw, 2.5rem)",
   md: "clamp(1rem, 7vw, 1.5rem)",
   sm: "1rem",
@@ -62,6 +62,18 @@ export const components = {
       }),
     },
   },
+  JoyList: {
+    defaultProps: {
+      size: "lg",
+    },
+  },
+  JoyListItem: {
+    styleOverrides: {
+      root: {
+        color: "inherit",
+      },
+    },
+  },
   JoyInput: FORM_INPUT,
   JoySelect: FORM_INPUT,
   JoyTextarea: FORM_INPUT,
@@ -87,7 +99,7 @@ export const components = {
     },
     styleOverrides: {
       root: ({ ownerState }: { ownerState: ButtonOwnerState }) => ({
-        fontSize: SIZES[ownerState.size || "lg"],
+        fontSize: FONT_SIZES[ownerState.size || "lg"],
         fontStyle: "normal",
         fontWeight: 700,
         lineHeight: "120%" /* 42px */,
@@ -100,7 +112,6 @@ export const components = {
         backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
         [`&.${buttonClasses.root}:hover`]: {
           boxShadow: `2px 2px 0px 0px ${BLACK}`,
-          backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
         },
         [`&.${buttonClasses.root}:active`]: {
           color: BACKGROUNDS[ownerState.color || "neutral"],
@@ -162,7 +173,7 @@ export const components = {
         content: {
           sx: {
             color: BLACK,
-            bgcolor: "#1DE9B6", // FIXME
+            // bgcolor: "#1DE9B6", // FIXME
             padding: "10rem 4rem",
             boxShadow: `-4px 4px 0px 0px ${BLACK}`,
           },
@@ -191,10 +202,12 @@ export const components = {
         fontWeight: 400,
         lineHeight: "130%",
         ...(ownerState.size === "sm" && {
+          padding: "0.25rem 1rem",
           borderRadius: "1rem",
           fontSize: "1rem",
         }),
         ...(ownerState.size === "md" && {
+          padding: "0.25rem 1rem",
           fontSize: "1.5rem",
           borderRadius: "1.5rem",
         }),
@@ -209,12 +222,12 @@ export const components = {
   JoyAspectRatio: {
     defaultProps: {
       variant: "outlined",
-      border: 0,
-      boxShadow: 0,
-      borderRadius: 0,
     },
     styleOverrides: {
       root: ({ ownerState }: { ownerState: AspectRatioOwnerState }) => ({
+        border: 0,
+        boxShadow: 0,
+        borderRadius: 0,
         ...(ownerState.variant === "outlined" && {
           border: "4px solid",
           borderColor: BLACK,
@@ -222,6 +235,9 @@ export const components = {
           boxShadow: `4px 4px 0px 0px ${BLACK}`,
         }),
       }),
+      content: {
+        border: 0,
+      },
     },
   },
 };
