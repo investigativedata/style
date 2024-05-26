@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/joy/Box";
 import AspectRatio from "@mui/joy/AspectRatio";
 
-interface IMediaScreen {
+export interface IMediaScreen {
   readonly ratio?: string;
 }
 

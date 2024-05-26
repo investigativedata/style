@@ -4,7 +4,7 @@ import Container from "@mui/joy/Container";
 import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 
-interface IScreen {
+export interface IScreen {
   readonly maxWidth?: "sm" | "md" | "lg" | "xl";
   readonly background?: ColorPaletteProp;
   readonly fullHeight?: boolean;
@@ -25,7 +25,7 @@ export default function Screen({
         paddingBottom: 12,
         display: "flex",
         width: "100%",
-        minHeight: fullHeight ? "100vh" : null,
+        minHeight: fullHeight ? "100vh" : "auto",
         alignItems: "center",
         alignContent: "center",
       }}
