@@ -18,7 +18,13 @@ export default function MediaScreen({
         width: "100%",
       }}
     >
-      <AspectRatio ratio={ratio}>{children}</AspectRatio>
+      <AspectRatio
+        ratio={ratio}
+        variant="plain"
+        sx={{ borderTop: "4px solid", borderBottom: "4px solid" }}
+      >
+        {children}
+      </AspectRatio>
     </Box>
   );
 }

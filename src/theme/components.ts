@@ -211,12 +211,14 @@ export const components = {
       variant: "outlined",
       border: 0,
       boxShadow: 0,
+      borderRadius: 0,
     },
     styleOverrides: {
       root: ({ ownerState }: { ownerState: AspectRatioOwnerState }) => ({
         ...(ownerState.variant === "outlined" && {
           border: "4px solid",
           borderColor: BLACK,
+          borderRadius: 0,
           boxShadow: `4px 4px 0px 0px ${BLACK}`,
         }),
       }),
