@@ -8,12 +8,15 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
+import PageMenu, { IPageMenuItem } from "./PageMenu";
 
 interface IHeaderProps {
   readonly homepage?: string;
   readonly color?: ColorPaletteProp;
+  readonly fixed?: boolean;
   readonly section?: string;
   readonly drawer?: React.ReactNode;
+  readonly pageMenu?: IPageMenuItem[];
 }
 
 interface IStackItem {
@@ -30,16 +33,24 @@ const StackItem = ({
 export default function Header({
   color = "neutral",
   homepage = "investigativedata.io",
+  fixed = false,
   section,
   drawer,
+  pageMenu,
 }: IHeaderProps) {
+  const usePageMenu = pageMenu && pageMenu.length > 0;
   return (
     <Box
       sx={{
         width: "100%",
         pt: "1.25rem",
-        pb: "1.25rem",
+        pb: usePageMenu ? 0 : "1.25rem",
         backgroundColor: BACKGROUND_VARS[color],
+        position: fixed ? "fixed" : "relative",
+        zIndex: 1000,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
       }}
     >
       <Container maxWidth="xl">
@@ -78,6 +89,7 @@ export default function Header({
           <StackItem justifyContent="right">{drawer || <Burger />}</StackItem>
         </Stack>
       </Container>
+      {usePageMenu && <PageMenu items={pageMenu} />}
     </Box>
   );
 }

@@ -40,3 +40,9 @@ export const WithMenu: Story = {
     ),
   },
 };
+
+export const WithAnchorMenu: Story = {
+  args: {
+    pageMenu: [1, 2, 3].map((i) => ({ label: `Anchor ${i}`, href: `#a${i}` })),
+  },
+};
