@@ -6,8 +6,9 @@ import Typography from "@mui/joy/Typography";
 import SectionHeader from "../components/SectionHeader";
 import Image from "../components/Image";
 
-interface IHero {
+export interface IHero {
   readonly title?: string;
+  readonly titleLevel?: "h1" | "h2";
   readonly tagLine?: string;
   readonly teaser?: React.ReactNode;
   readonly action?: React.ReactNode;
@@ -20,6 +21,7 @@ interface IHero {
 
 export default function Hero({
   title,
+  titleLevel = "h2",
   tagLine,
   teaser,
   mediaSrc,
@@ -39,7 +41,13 @@ export default function Hero({
   ) : null;
   const Content = (
     <>
-      {title && <SectionHeader title={title} tagLine={tagLine} />}
+      {title && (
+        <SectionHeader
+          title={title}
+          titleLevel={titleLevel}
+          tagLine={tagLine}
+        />
+      )}
       {teaser && <Typography>{teaser}</Typography>}
       {action}
     </>
@@ -53,11 +61,16 @@ export default function Hero({
       spacing={8}
       width="100%"
       margin="0"
+      padding="0"
     >
       <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>
         {Media}
       </Grid>
-      <Grid md={6} order={{ sm: 1, md: mediaRight ? 1 : 2 }}>
+      <Grid
+        md={6}
+        order={{ sm: 1, md: mediaRight ? 1 : 2 }}
+        paddingLeft={mediaRight ? 0 : 4}
+      >
         {Content}
       </Grid>
     </Grid>
