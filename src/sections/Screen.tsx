@@ -7,11 +7,13 @@ import { BACKGROUND_VARS } from "../theme/colors";
 interface IScreen {
   readonly maxWidth?: "sm" | "md" | "lg" | "xl";
   readonly background?: ColorPaletteProp;
+  readonly fullHeight?: boolean;
 }
 
 export default function Screen({
   background = "neutral",
   maxWidth = "xl",
+  fullHeight = true,
   children,
 }: React.PropsWithChildren<IScreen>) {
   return (
@@ -21,9 +23,11 @@ export default function Screen({
         backgroundColor: BACKGROUND_VARS[background],
         paddingTop: 12,
         paddingBottom: 12,
-        display: "block",
+        display: "flex",
         width: "100%",
-        minHeight: "100vh",
+        minHeight: fullHeight ? "100vh" : null,
+        alignItems: "center",
+        alignContent: "center",
       }}
     >
       <Container maxWidth={maxWidth}>{children}</Container>
