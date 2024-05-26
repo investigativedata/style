@@ -49,7 +49,7 @@ export default function Hero({
       container
       alignItems="center"
       alignContent="center"
-      justifyContent="center"
+      justifyContent="space-between"
       spacing={8}
       width="100%"
       margin="0"
