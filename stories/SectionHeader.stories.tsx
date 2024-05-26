@@ -21,7 +21,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "Headline of the section",
-    tagLine: "A small top mark"
+    tagLine: "A small top mark",
+  },
+};
+
+export const TitleLevelH1: Story = {
+  args: {
+    tagLine: "A small top mark",
+    title: "Headline of the section",
+    titleLevel: "h1",
   },
 };
 
