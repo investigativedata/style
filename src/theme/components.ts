@@ -1,11 +1,12 @@
+import { AspectRatioOwnerState } from "@mui/joy";
 import { ButtonOwnerState, buttonClasses } from "@mui/joy/Button";
-import { BACKGROUNDS, BLACK } from "./colors";
-import { linkClasses } from "@mui/joy/Link";
-import { TypographyOwnerState } from "@mui/joy/Typography";
 import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
+import { linkClasses } from "@mui/joy/Link";
+import { TypographyOwnerState } from "@mui/joy/Typography";
+import { BACKGROUNDS, BLACK } from "./colors";
 
-const SIZES = {
+export const FONT_SIZES = {
   lg: "clamp(1.5rem, 7vw, 2.5rem)",
   md: "clamp(1rem, 7vw, 1.5rem)",
   sm: "1rem",
@@ -58,7 +59,22 @@ export const components = {
         ...(ownerState.level === "body-lg" && {
           paddingBottom: "2rem",
         }),
+        ...(ownerState.level === "body-md" && {
+          paddingBottom: "1rem",
+        }),
       }),
+    },
+  },
+  JoyList: {
+    defaultProps: {
+      size: "lg",
+    },
+  },
+  JoyListItem: {
+    styleOverrides: {
+      root: {
+        color: "inherit",
+      },
     },
   },
   JoyInput: FORM_INPUT,
@@ -86,7 +102,7 @@ export const components = {
     },
     styleOverrides: {
       root: ({ ownerState }: { ownerState: ButtonOwnerState }) => ({
-        fontSize: SIZES[ownerState.size || "lg"],
+        fontSize: FONT_SIZES[ownerState.size || "lg"],
         fontStyle: "normal",
         fontWeight: 700,
         lineHeight: "120%" /* 42px */,
@@ -99,7 +115,6 @@ export const components = {
         backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
         [`&.${buttonClasses.root}:hover`]: {
           boxShadow: `2px 2px 0px 0px ${BLACK}`,
-          backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
         },
         [`&.${buttonClasses.root}:active`]: {
           color: BACKGROUNDS[ownerState.color || "neutral"],
@@ -156,11 +171,12 @@ export const components = {
   },
   JoyDrawer: {
     defaultProps: {
+      anchor: "right",
       slotProps: {
         content: {
           sx: {
             color: BLACK,
-            bgcolor: "#1DE9B6", // FIXME
+            // bgcolor: "#1DE9B6", // FIXME
             padding: "10rem 4rem",
             boxShadow: `-4px 4px 0px 0px ${BLACK}`,
           },
@@ -189,10 +205,12 @@ export const components = {
         fontWeight: 400,
         lineHeight: "130%",
         ...(ownerState.size === "sm" && {
+          padding: "0.25rem 1rem",
           borderRadius: "1rem",
           fontSize: "1rem",
         }),
         ...(ownerState.size === "md" && {
+          padding: "0.25rem 1rem",
           fontSize: "1.5rem",
           borderRadius: "1.5rem",
         }),
@@ -202,6 +220,27 @@ export const components = {
           borderRadius: "2rem",
         }),
       }),
+    },
+  },
+  JoyAspectRatio: {
+    defaultProps: {
+      variant: "outlined",
+    },
+    styleOverrides: {
+      root: ({ ownerState }: { ownerState: AspectRatioOwnerState }) => ({
+        border: 0,
+        boxShadow: 0,
+        borderRadius: 0,
+        ...(ownerState.variant === "outlined" && {
+          border: "4px solid",
+          borderColor: BLACK,
+          borderRadius: 0,
+          boxShadow: `4px 4px 0px 0px ${BLACK}`,
+        }),
+      }),
+      content: {
+        border: 0,
+      },
     },
   },
 };

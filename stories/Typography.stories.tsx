@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Typography from "@mui/joy/Typography";
 
 const Headlines = [1, 2, 3, 4, 5, 6].map(
-  (i) => `This is a headline level ${i}`
+  (i) => `This is a headline level ${i}`,
 );
 
 const Paragraph = `

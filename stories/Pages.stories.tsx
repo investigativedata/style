@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Typography from "@mui/joy/Typography";
-import Grid from "@mui/joy/Grid";
 import Button from "@mui/joy/Button";
+import Grid from "@mui/joy/Grid";
 import Link from "@mui/joy/Link";
-
-import Screen from "../src/sections/Screen";
-import MediaScreen from "../src/sections/MediaScreen";
-import Header from "../src/components/Header";
+import Typography from "@mui/joy/Typography";
 import Card from "../src/components/Card";
+import Header from "../src/components/Header";
 import Hero from "../src/sections/Hero";
+import MediaScreen from "../src/sections/MediaScreen";
+import Screen from "../src/sections/Screen";
 
 const Page = () => (
   <>
@@ -25,7 +24,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Card title"
             sx={{ height: "100%" }}
           >
@@ -37,7 +36,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Short text"
             sx={{ height: "100%" }}
             action={<Button color="danger">Click here</Button>}
@@ -48,7 +47,7 @@ const Page = () => (
         <Grid md={4}>
           <Card
             color="danger"
-            icon="person-trump"
+            icon="./mojis/person-trump.svg"
             title="Long text"
             sx={{ height: "100%" }}
           >
@@ -61,11 +60,22 @@ const Page = () => (
       </Grid>
     </Screen>
     <Screen background="warning">
+      <Typography level="h1">A big section title</Typography>
       <Hero
         tagLine="A small top mark"
         title="A very big hero headline"
         teaser="Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae."
-        icon="person-trump"
+        mediaSrc="./img/infra.jpg"
+        mediaBorder={true}
+        mediaRight={true}
+        action={<Button color="warning">Click here</Button>}
+      />
+      <Hero
+        tagLine="A small top mark"
+        title="A very big hero headline"
+        teaser="Sunt aut aspernatur ut eum quae dolore quidem. Id ipsam temporibus recusandae."
+        mediaSrc="./img/infra.jpg"
+        mediaBorder={true}
         action={<Button color="warning">Click here</Button>}
       />
     </Screen>

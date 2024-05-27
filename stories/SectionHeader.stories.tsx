@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import SectionHeader from "../src/components/SectionHeader";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -21,7 +20,15 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "Headline of the section",
-    tagLine: "A small top mark"
+    tagLine: "A small top mark",
+  },
+};
+
+export const TitleLevelH1: Story = {
+  args: {
+    tagLine: "A small top mark",
+    title: "Headline of the section",
+    titleLevel: "h1",
   },
 };
 

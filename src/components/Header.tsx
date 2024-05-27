@@ -1,19 +1,24 @@
 import React from "react";
+import { SxProps } from "@mui/joy/styles/types";
 import Box from "@mui/joy/Box";
 import Container from "@mui/joy/Container";
 import Link from "@mui/joy/Link";
 import Stack from "@mui/joy/Stack";
 import Typography from "@mui/joy/Typography";
 import { ColorPaletteProp } from "@mui/joy/styles";
-import Logo, { TLogoColor, TLogoVariant } from "./Logo";
-import ArrowDown from "./ArrowDown";
 import { BACKGROUND_VARS } from "../theme/colors";
+import AnimatedLogo from "./AnimatedLogo";
+import Burger from "./Burger";
+import PageMenu, { IPageMenuItem } from "./PageMenu";
 
 interface IHeaderProps {
   readonly homepage?: string;
   readonly color?: ColorPaletteProp;
-  readonly logoColor?: TLogoColor;
-  readonly logoVariant?: TLogoVariant;
+  readonly fixed?: boolean;
+  readonly section?: string;
+  readonly drawer?: React.ReactNode;
+  readonly pageMenu?: IPageMenuItem[];
+  readonly sx?: SxProps;
 }
 
 interface IStackItem {
@@ -29,17 +34,27 @@ const StackItem = ({
 
 export default function Header({
   color = "neutral",
-  logoColor,
-  logoVariant,
   homepage = "investigativedata.io",
+  fixed = false,
+  section,
+  drawer,
+  pageMenu,
+  sx = {},
 }: IHeaderProps) {
+  const usePageMenu = pageMenu && pageMenu.length > 0;
   return (
     <Box
       sx={{
         width: "100%",
         pt: "1.25rem",
-        pb: "1.25rem",
+        pb: usePageMenu ? 0 : "1.25rem",
         backgroundColor: BACKGROUND_VARS[color],
+        position: fixed ? "fixed" : "relative",
+        zIndex: 1000,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
+        ...sx,
       }}
     >
       <Container maxWidth="xl">
@@ -48,9 +63,17 @@ export default function Header({
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
+          height="110px"
         >
           <StackItem justifyContent="left">
-            <Typography level="h3" sx={{ fs: "1.3125rem", p: 0 }}>
+            <Typography
+              level="h3"
+              sx={{
+                fs: "1.3125rem",
+                p: 0,
+              }}
+              fontWeight={section ? 400 : 700}
+            >
               <Link
                 sx={{
                   color: "inherit",
@@ -61,16 +84,16 @@ export default function Header({
               >
                 {homepage}
               </Link>
+              {section && <strong> {section}</strong>}
             </Typography>
           </StackItem>
           <StackItem justifyContent="center">
-            <Logo color={logoColor} variant={logoVariant} />
+            <AnimatedLogo />
           </StackItem>
-          <StackItem justifyContent="right">
-            <ArrowDown color={color} />
-          </StackItem>
+          <StackItem justifyContent="right">{drawer || <Burger />}</StackItem>
         </Stack>
       </Container>
+      {usePageMenu && <PageMenu items={pageMenu} />}
     </Box>
   );
 }

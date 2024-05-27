@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Card from "../src/components/Card";
 import Typography from "@mui/joy/Typography";
+import Card from "../src/components/Card";
 
 const ExampleContent = () => (
   <Typography>
@@ -40,7 +39,7 @@ export const Default: Story = {
 
 export const WithIcon: Story = {
   args: {
-    icon: "woman raising hand",
+    icon: "./mojis/person-trump.svg",
     title: "Card title",
     children: <ExampleContent />,
   },

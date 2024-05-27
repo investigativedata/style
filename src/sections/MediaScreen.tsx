@@ -1,18 +1,14 @@
 import React from "react";
-import Box from "@mui/joy/Box";
-import Container from "@mui/joy/Container";
 import AspectRatio from "@mui/joy/AspectRatio";
-import Typography from "@mui/joy/Typography";
+import Box from "@mui/joy/Box";
 
-interface IMediaScreen {
+export interface IMediaScreen {
   readonly ratio?: string;
-  readonly credits?: React.ReactNode;
 }
 
 export default function MediaScreen({
   children,
   ratio,
-  credits,
 }: React.PropsWithChildren<IMediaScreen>) {
   return (
     <Box
@@ -22,12 +18,13 @@ export default function MediaScreen({
         width: "100%",
       }}
     >
-      <AspectRatio ratio={ratio}>{children}</AspectRatio>
-      {credits && (
-        <Container maxWidth="xl" sx={{ paddingTop: 2 }}>
-          <Typography level="body-sm">{credits}</Typography>
-        </Container>
-      )}
+      <AspectRatio
+        ratio={ratio}
+        variant="plain"
+        sx={{ borderTop: "4px solid", borderBottom: "4px solid" }}
+      >
+        {children}
+      </AspectRatio>
     </Box>
   );
 }

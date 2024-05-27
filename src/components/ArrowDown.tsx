@@ -3,7 +3,7 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 
 export default function ArrowDown({ color }: { color: ColorPaletteProp }) {
   return (
-    <AspectRatio style={{ width: "40px", height: "auto" }}>
+    <AspectRatio style={{ width: "40px", height: "auto" }} variant="plain">
       <svg
         width="22"
         height="20"

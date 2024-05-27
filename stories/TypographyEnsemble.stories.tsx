@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Typography from "@mui/joy/Typography";
 import Container from "@mui/joy/Container";
+import Typography from "@mui/joy/Typography";
 
 const Paragraph = `
     Doloribus voluptas qui quisquam vel laudantium est. Possimus iste

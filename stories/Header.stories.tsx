@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
+import Drawer, { DrawerMenuItem } from "../src/components/Drawer";
 import Header from "../src/components/Header";
 
 const meta = {
@@ -21,5 +21,27 @@ export const Default: Story = {};
 export const Primary: Story = {
   args: {
     color: "primary",
+  },
+};
+
+export const WithBreadcrump: Story = { args: { section: "My page" } };
+
+export const WithMenu: Story = {
+  args: {
+    drawer: (
+      <Drawer
+        children={[1, 2, 3].map((i) => (
+          <DrawerMenuItem key={i} href="#">
+            Link {i}
+          </DrawerMenuItem>
+        ))}
+      />
+    ),
+  },
+};
+
+export const WithAnchorMenu: Story = {
+  args: {
+    pageMenu: [1, 2, 3].map((i) => ({ label: `Anchor ${i}`, href: `#a${i}` })),
   },
 };

@@ -1,23 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Link from "@mui/joy/Link";
-import MediaScreen from "../src/sections/MediaScreen";
+import PageMenu from "../src/components/PageMenu";
 
 const meta = {
-  title: "Sections/MediaScreen",
-  component: MediaScreen,
+  title: "Components/PageMenu",
+  component: PageMenu,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: "fullscreen",
   },
-} satisfies Meta<typeof MediaScreen>;
+} satisfies Meta<typeof PageMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: <img src="./img/infra.jpg" />,
+    items: [
+      { label: "Anchor 1", href: "#anchor1" },
+      { label: "Anchor 2", href: "#anchor2" },
+      { label: "Anchor 3", href: "#anchor3" },
+    ],
   },
 };
