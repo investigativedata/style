@@ -30,28 +30,28 @@ export default function Burger({
             id="Vector"
             d="M2.22217 32.6389H62.7777"
             stroke="#1A1A1A"
-            stroke-width="4"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Vector_2"
             d="M2.22217 17.5H62.7777"
             stroke="#1A1A1A"
-            stroke-width="4"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             id="Vector_3"
             d="M2.22217 2.36111H62.7777"
             stroke="#1A1A1A"
-            stroke-width="4"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="4"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </svg>
