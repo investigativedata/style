@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Header from "../src/components/Header";
 import Drawer, { DrawerMenuItem } from "../src/components/Drawer";
+import Header from "../src/components/Header";
 
 const meta = {
   title: "Components/Header",

@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Animation from "../src/components/Animation";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
+import Animation from "../src/components/Animation";
 
 const meta = {
   title: "Components/Animation",

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Screen from "../src/sections/Screen";
 import Typography from "@mui/joy/Typography";
+import Screen from "../src/sections/Screen";
 
 const meta = {
   title: "Sections/Screen",

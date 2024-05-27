@@ -1,13 +1,13 @@
 import React from "react";
-import MuiDrawer from "@mui/joy/Drawer";
+import { SxProps } from "@mui/joy/styles/types";
 import DialogContent from "@mui/joy/DialogContent";
 import DialogTitle from "@mui/joy/DialogTitle";
-import ModalClose from "@mui/joy/ModalClose";
+import MuiDrawer from "@mui/joy/Drawer";
 import Link, { LinkProps } from "@mui/joy/Link";
+import ModalClose from "@mui/joy/ModalClose";
 import { BLACK } from "../theme/colors";
-import { SxProps } from "@mui/joy/styles/types";
-import Burger from "./Burger";
 import { FONT_SIZES } from "../theme/components";
+import Burger from "./Burger";
 
 interface IDrawer {
   readonly anchor?: "bottom" | "left" | "right" | "top";

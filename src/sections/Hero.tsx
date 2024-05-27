@@ -2,9 +2,8 @@ import React from "react";
 import Box from "@mui/joy/Box";
 import Grid from "@mui/joy/Grid";
 import Typography from "@mui/joy/Typography";
-
-import SectionHeader from "../components/SectionHeader";
 import Image from "../components/Image";
+import SectionHeader from "../components/SectionHeader";
 
 export interface IHero {
   readonly title?: string;

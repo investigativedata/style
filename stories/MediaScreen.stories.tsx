@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import MediaScreen from "../src/sections/MediaScreen";
 import Link from "@mui/joy/Link";
+import MediaScreen from "../src/sections/MediaScreen";
 
 const meta = {
   title: "Sections/MediaScreen",

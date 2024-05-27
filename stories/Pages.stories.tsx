@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Typography from "@mui/joy/Typography";
-import Grid from "@mui/joy/Grid";
 import Button from "@mui/joy/Button";
+import Grid from "@mui/joy/Grid";
 import Link from "@mui/joy/Link";
-
-import Screen from "../src/sections/Screen";
-import MediaScreen from "../src/sections/MediaScreen";
-import Header from "../src/components/Header";
+import Typography from "@mui/joy/Typography";
 import Card from "../src/components/Card";
+import Header from "../src/components/Header";
 import Hero from "../src/sections/Hero";
+import MediaScreen from "../src/sections/MediaScreen";
+import Screen from "../src/sections/Screen";
 
 const Page = () => (
   <>

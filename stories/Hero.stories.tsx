@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Button from "@mui/joy/Button";
 import Container from "@mui/joy/Container";
-
-import Hero from "../src/sections/Hero";
 import Link from "@mui/joy/Link";
+import Hero from "../src/sections/Hero";
 
 const meta = {
   title: "Components/Hero",

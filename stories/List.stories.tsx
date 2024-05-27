@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 

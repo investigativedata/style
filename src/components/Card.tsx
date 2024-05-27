@@ -3,7 +3,6 @@ import MuiCard, { CardProps } from "@mui/joy/Card";
 import CardActions from "@mui/joy/CardActions";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
-
 import Image from "./Image";
 
 export interface ICard extends CardProps {

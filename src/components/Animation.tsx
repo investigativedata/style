@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
 import { useRive } from "@rive-app/react-canvas-lite";
+import React, { useEffect, useRef, useState } from "react";
 import Box from "@mui/joy/Box";
 
 export interface IAnimation {

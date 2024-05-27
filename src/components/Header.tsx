@@ -1,4 +1,5 @@
 import React from "react";
+import { SxProps } from "@mui/joy/styles/types";
 import Box from "@mui/joy/Box";
 import Container from "@mui/joy/Container";
 import Link from "@mui/joy/Link";
@@ -9,7 +10,6 @@ import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
 import PageMenu, { IPageMenuItem } from "./PageMenu";
-import { SxProps } from "@mui/joy/styles/types";
 
 interface IHeaderProps {
   readonly homepage?: string;

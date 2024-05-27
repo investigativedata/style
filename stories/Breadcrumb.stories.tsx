@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Breadcrumbs from "@mui/joy/Breadcrumbs";
 import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";

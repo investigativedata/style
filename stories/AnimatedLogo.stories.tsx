@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import AnimatedLogo from "../src/components/AnimatedLogo";
 
 const meta = {

@@ -1,10 +1,10 @@
+import { AspectRatioOwnerState } from "@mui/joy";
 import { ButtonOwnerState, buttonClasses } from "@mui/joy/Button";
-import { BACKGROUNDS, BLACK } from "./colors";
-import { linkClasses } from "@mui/joy/Link";
-import { TypographyOwnerState } from "@mui/joy/Typography";
 import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
-import { AspectRatioOwnerState } from "@mui/joy";
+import { linkClasses } from "@mui/joy/Link";
+import { TypographyOwnerState } from "@mui/joy/Typography";
+import { BACKGROUNDS, BLACK } from "./colors";
 
 export const FONT_SIZES = {
   lg: "clamp(1.5rem, 7vw, 2.5rem)",

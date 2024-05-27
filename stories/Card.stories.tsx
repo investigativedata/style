@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Card from "../src/components/Card";
 import Typography from "@mui/joy/Typography";
+import Card from "../src/components/Card";
 
 const ExampleContent = () => (
   <Typography>

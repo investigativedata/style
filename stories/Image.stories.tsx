@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Box from "@mui/joy/Box";
-
 import Image from "../src/components/Image";
 
 const meta = {

@@ -9,7 +9,7 @@ export const typography: Typography = {
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "100%",
-    letterSpacing: "-0.12rem"
+    letterSpacing: "-0.12rem",
   },
   h2: {
     fontSize: "clamp(2rem, 7vw, 4rem)",
