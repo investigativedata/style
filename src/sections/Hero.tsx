@@ -48,7 +48,7 @@ export default function Hero({
           tagLine={tagLine}
         />
       )}
-      {teaser && <Typography>{teaser}</Typography>}
+      {teaser && <Typography component="span">{teaser}</Typography>}
       {action}
     </>
   );
@@ -68,7 +68,7 @@ export default function Hero({
       </Grid>
       <Grid
         md={6}
-        order={{ sm: 1, md: mediaRight ? 1 : 2 }}
+        order={{ sm: 2, md: mediaRight ? 1 : 2 }}
         paddingLeft={mediaRight ? 0 : 4}
       >
         {Content}
