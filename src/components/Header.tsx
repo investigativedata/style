@@ -9,6 +9,7 @@ import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
 import PageMenu, { IPageMenuItem } from "./PageMenu";
+import { SxProps } from "@mui/joy/styles/types";
 
 interface IHeaderProps {
   readonly homepage?: string;
@@ -17,6 +18,7 @@ interface IHeaderProps {
   readonly section?: string;
   readonly drawer?: React.ReactNode;
   readonly pageMenu?: IPageMenuItem[];
+  readonly sx?: SxProps;
 }
 
 interface IStackItem {
@@ -37,6 +39,7 @@ export default function Header({
   section,
   drawer,
   pageMenu,
+  sx = {},
 }: IHeaderProps) {
   const usePageMenu = pageMenu && pageMenu.length > 0;
   return (
@@ -51,6 +54,7 @@ export default function Header({
         display: "flex",
         flexDirection: "column",
         gap: 2,
+        ...sx,
       }}
     >
       <Container maxWidth="xl">
