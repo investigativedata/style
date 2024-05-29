@@ -71,9 +71,14 @@ export const components = {
     },
   },
   JoyListItem: {
+    // defaultProps: {
+    //   slots: {
+    //     root: UnorderedListItem,
+    //   },
+    // },
     styleOverrides: {
       root: {
-        color: "inherit",
+        color: BLACK,
       },
     },
   },
