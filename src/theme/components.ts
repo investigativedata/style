@@ -243,4 +243,11 @@ export const components = {
       },
     },
   },
+  JoyAlert: {
+    styleOverrides: {
+      root: {
+        borderRadius: 0,
+      },
+    },
+  },
 };
