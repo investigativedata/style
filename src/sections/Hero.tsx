@@ -1,5 +1,4 @@
 import React from "react";
-import Box from "@mui/joy/Box";
 import Grid from "@mui/joy/Grid";
 import Typography from "@mui/joy/Typography";
 import Image from "../components/Image";
@@ -30,13 +29,11 @@ export default function Hero({
   action,
 }: IHero) {
   const Media = mediaSrc ? (
-    <Box maxWidth="sm" sx={{ p: 6 }}>
-      <Image
-        src={mediaSrc}
-        variant={mediaBorder ? "outlined" : "plain"}
-        ratio={mediaRatio}
-      />
-    </Box>
+    <Image
+      src={mediaSrc}
+      variant={mediaBorder ? "outlined" : "plain"}
+      ratio={mediaRatio}
+    />
   ) : null;
   const Content = (
     <>
@@ -62,12 +59,21 @@ export default function Hero({
       margin="0"
       padding="0"
     >
-      <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>
+      <Grid
+        md={6}
+        p={0}
+        width={{
+          xs: 'calc(100% * 8 / var(--Grid-columns))',
+          md: 'calc(100% * 6 / var(--Grid-columns))',
+        }}
+        order={{ sm: 1, md: mediaRight ? 2 : 1 }}
+      >
         {Media}
       </Grid>
       <Grid
         md={6}
         order={{ sm: 2, md: mediaRight ? 1 : 2 }}
+        p={0}
         paddingLeft={mediaRight ? 0 : 4}
       >
         {Content}
