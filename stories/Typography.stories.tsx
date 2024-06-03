@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import Typography from "@mui/joy/Typography";
 
 const Headlines = [1, 2, 3, 4, 5, 6].map(
