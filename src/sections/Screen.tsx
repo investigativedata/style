@@ -1,12 +1,10 @@
 import React from "react";
 import Box from "@mui/joy/Box";
 import Container from "@mui/joy/Container";
-import { ColorPaletteProp } from "@mui/joy/styles";
-import { BACKGROUND_VARS } from "../theme/colors";
 
 export interface IScreen {
   readonly maxWidth?: "sm" | "md" | "lg" | "xl";
-  readonly background?: ColorPaletteProp;
+  readonly background?: string; //FIXME should accept ColorPaletteProp
   readonly fullHeight?: boolean;
 }
 
@@ -18,9 +16,9 @@ export default function Screen({
 }: React.PropsWithChildren<IScreen>) {
   return (
     <Box
+      data-color={background}
       component="section"
       sx={{
-        backgroundColor: BACKGROUND_VARS[background],
         paddingTop: 12,
         paddingBottom: 12,
         display: "flex",
