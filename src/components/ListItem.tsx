@@ -26,11 +26,7 @@ const Checkmark = () => (
   </svg>
 );
 
-interface IListItemProps {
-  readonly children: React.ReactNode;
-}
-
-interface IOrderedListItemProps extends IListItemProps {
+interface IOrderedListItemProps {
   readonly ix: number;
 }
 
@@ -51,12 +47,10 @@ const CircleNumber = ({ ix }: { ix: number }) => (
   </span>
 );
 
-export function UnorderedListItem(
-  props: React.PropsWithChildren<IListItemProps>,
-) {
+export function UnorderedListItem(props: React.PropsWithChildren) {
   return (
     <ListItem {...props} sx={{ gap: "2rem" }}>
-      <ListItemDecorator sx={{ flex: "0 0 4rem" }}>
+      <ListItemDecorator sx={{ flex: "0 0 4rem", alignContent: "center" }}>
         <Checkmark />
       </ListItemDecorator>
       <ListItemContent>{props.children}</ListItemContent>

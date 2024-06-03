@@ -10,6 +10,7 @@ export { default as AnimatedLogo } from "./components/AnimatedLogo";
 export { default as Image } from "./components/Image";
 export { default as SectionHeader } from "./components/SectionHeader";
 export { default as PageMenu } from "./components/PageMenu";
+export { OrderedListItem, UnorderedListItem } from "./components/ListItem";
 
 export { default as Hero } from "./sections/Hero";
 export { default as MediaScreen } from "./sections/MediaScreen";
