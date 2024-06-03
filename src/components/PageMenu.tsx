@@ -19,6 +19,7 @@ export default function PageMenu({ items }: { items: IPageMenuItem[] }) {
       borderTop={4}
       borderBottom={4}
       borderColor="text.primary"
+      overflow="auto"
     >
       <Container maxWidth="xl">
         <List

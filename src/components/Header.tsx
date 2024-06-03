@@ -22,8 +22,12 @@ interface IHeaderProps {
   readonly sx?: SxProps;
 }
 
+// FIXME find right type for responsive style object
 interface IStackItem {
   readonly hide?: boolean;
+  readonly width?: any;
+  readonly margin?: any;
+  readonly height?: any;
   readonly justifyContent: "left" | "right" | "center";
 }
 
@@ -31,10 +35,9 @@ const StackItem = ({
   children,
   justifyContent,
   hide,
+  ...props
 }: React.PropsWithChildren<IStackItem>) => (
-  <Box sx={{ width: "33.3%", display: hide ? "none" : "flex", justifyContent }}>
-    {children}
-  </Box>
+  <Box sx={{ display: hide ? "none": "flex", justifyContent }} {...props}>{children}</Box>
 );
 
 export default function Header({
@@ -69,10 +72,15 @@ export default function Header({
           direction="row"
           justifyContent="space-between"
           alignItems="center"
+          flexWrap={{ xs: 'wrap', sm: 'nowrap' }}
           spacing={2}
           height={isCollapsed ? "auto" : "90px"}
         >
-          <StackItem justifyContent="left">
+          <StackItem
+            justifyContent="left"
+            width={{ xs: '100%', sm: 'auto' }}
+            margin={{ xs: '0 0 1rem 0 !important', sm: '0 1rem 0 0 !important' }}
+          >
             <Typography
               level="h3"
               sx={{
@@ -94,10 +102,18 @@ export default function Header({
               {section && <strong> {section}</strong>}
             </Typography>
           </StackItem>
-          <StackItem justifyContent="center" hide={isCollapsed}>
+          <StackItem
+            justifyContent="center" hide={isCollapsed}
+            width={{ xs: '50%', sm: 'auto' }}
+            margin={{ xs: '0 !important', sm: '0 0 0 1rem !important' }}
+          >
             <AnimatedLogo />
           </StackItem>
-          <StackItem justifyContent="right">{drawer || <Burger />}</StackItem>
+          <StackItem
+            justifyContent="right"
+            width={{ xs: 45, sm: 65 }}
+            height={{ xs: 25, sm: 35 }}
+          >{drawer || <Burger />}</StackItem>
         </Stack>
       </Container>
       {usePageMenu && <PageMenu items={pageMenu} />}
