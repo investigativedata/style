@@ -5,6 +5,7 @@ export { default as ArrowDown } from "./components/ArrowDown";
 export { default as Card } from "./components/Card";
 export { default as Drawer, DrawerMenuItem } from "./components/Drawer";
 export { default as Header } from "./components/Header";
+export { default as HeaderContext } from "./components/HeaderContext";
 export { default as Logo } from "./components/Logo";
 export { default as AnimatedLogo } from "./components/AnimatedLogo";
 export { default as Image } from "./components/Image";

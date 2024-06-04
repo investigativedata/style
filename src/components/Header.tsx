@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { SxProps } from "@mui/joy/styles/types";
 import Box from "@mui/joy/Box";
 import Container from "@mui/joy/Container";
@@ -9,6 +9,7 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
+import { HeaderScrollContext } from "./HeaderContext";
 import PageMenu, { IPageMenuItem } from "./PageMenu";
 
 interface IHeaderProps {
@@ -22,14 +23,18 @@ interface IHeaderProps {
 }
 
 interface IStackItem {
+  readonly hide?: boolean;
   readonly justifyContent: "left" | "right" | "center";
 }
 
 const StackItem = ({
   children,
   justifyContent,
+  hide,
 }: React.PropsWithChildren<IStackItem>) => (
-  <Box sx={{ width: "33.3%", display: "flex", justifyContent }}>{children}</Box>
+  <Box sx={{ width: "33.3%", display: hide ? "none" : "flex", justifyContent }}>
+    {children}
+  </Box>
 );
 
 export default function Header({
@@ -42,12 +47,14 @@ export default function Header({
   sx = {},
 }: IHeaderProps) {
   const usePageMenu = pageMenu && pageMenu.length > 0;
+  const isCollapsed = useContext(HeaderScrollContext);
   return (
     <Box
+      component="header"
       sx={{
         width: "100%",
-        pt: "1.25rem",
-        pb: usePageMenu ? 0 : "1.25rem",
+        pt: isCollapsed ? "1rem" : "1.25rem",
+        pb: usePageMenu ? 0 : isCollapsed ? "1rem" : "1.25rem",
         backgroundColor: BACKGROUND_VARS[color],
         position: fixed ? "fixed" : "relative",
         zIndex: 1000,
@@ -63,7 +70,7 @@ export default function Header({
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
-          height="110px"
+          height={isCollapsed ? "auto" : "110px"}
         >
           <StackItem justifyContent="left">
             <Typography
@@ -87,7 +94,7 @@ export default function Header({
               {section && <strong> {section}</strong>}
             </Typography>
           </StackItem>
-          <StackItem justifyContent="center">
+          <StackItem justifyContent="center" hide={isCollapsed}>
             <AnimatedLogo />
           </StackItem>
           <StackItem justifyContent="right">{drawer || <Burger />}</StackItem>
