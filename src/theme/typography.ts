@@ -46,6 +46,7 @@ export const typography: Typography = {
     letterSpacing: "-2%",
   },
   "body-sm": {
+    color: "inherit",
     fontSize: "1rem",
     fontStyle: "normal",
     fontWeight: 400,
