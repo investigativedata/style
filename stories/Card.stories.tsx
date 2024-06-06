@@ -1,9 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
+import Button from "@mui/joy/Button";
 import Typography from "@mui/joy/Typography";
 import Card from "../src/components/Card";
 
 const ExampleContent = () => (
   <Typography>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </Typography>
+);
+
+const SmallerContent = () => (
+  <Typography level="body-md">
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
   </Typography>
 );
@@ -82,5 +90,13 @@ export const Danger: Story = {
     color: "danger",
     title: "Card title",
     children: <ExampleContent />,
+  },
+};
+
+export const MediumCard: Story = {
+  args: {
+    title: "Medium sized card",
+    children: <SmallerContent />,
+    action: <Button>Click here</Button>,
   },
 };

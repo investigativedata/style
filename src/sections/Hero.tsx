@@ -30,7 +30,12 @@ export default function Hero({
   action,
 }: IHero) {
   const Media = mediaSrc ? (
-    <Box maxWidth="sm" sx={{ p: 6 }}>
+    <Box
+      maxWidth="sm"
+      padding={{ sm: 4, md: 8 }}
+      paddingTop={10}
+      paddingBottom={{ sm: 4, md: 10 }}
+    >
       <Image
         src={mediaSrc}
         variant={mediaBorder ? "outlined" : "plain"}
@@ -57,18 +62,31 @@ export default function Hero({
       alignItems="center"
       alignContent="center"
       justifyContent="space-between"
-      spacing={8}
+      spacing={6}
+      gap={{ xs: 4, md: 0 }}
       width="100%"
       margin="0"
       padding="0"
     >
-      <Grid md={6} order={{ sm: 1, md: mediaRight ? 2 : 1 }}>
+      <Grid
+        md={6}
+        p={0}
+        width="100%"
+        // width={{
+        //   xs: "100%",
+        //   md: "calc(100% * 6 / var(--Grid-columns))",
+        // }}
+        order={{ sm: 1, md: mediaRight ? 2 : 1 }}
+        justifyContent="center"
+      >
         {Media}
       </Grid>
       <Grid
         md={6}
         order={{ sm: 2, md: mediaRight ? 1 : 2 }}
-        paddingLeft={mediaRight ? 0 : 4}
+        p={0}
+        paddingLeft={{ sm: 0, md: mediaRight ? 0 : 4 }}
+        textAlign={{ xs: "center", md: "inherit" }}
       >
         {Content}
       </Grid>

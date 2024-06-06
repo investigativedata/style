@@ -3,6 +3,7 @@ import Container from "@mui/joy/Container";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
+import { FONT_SIZES } from "../theme/typography";
 
 export interface IPageMenuItem {
   readonly label: string;
@@ -18,6 +19,7 @@ export default function PageMenu({ items }: { items: IPageMenuItem[] }) {
       borderTop={4}
       borderBottom={4}
       borderColor="text.primary"
+      overflow="auto"
     >
       <Container maxWidth="xl">
         <List
@@ -26,7 +28,7 @@ export default function PageMenu({ items }: { items: IPageMenuItem[] }) {
           sx={{ justifyContent: "space-evenly" }}
         >
           {items.map(({ label, href }) => (
-            <ListItem key={href} role="none" sx={{ p: "1rem 1.25rem" }}>
+            <ListItem key={href} role="none" sx={{ p: "0.8rem 1rem" }}>
               <ListItemButton
                 role="menuitem"
                 component="a"
@@ -38,7 +40,7 @@ export default function PageMenu({ items }: { items: IPageMenuItem[] }) {
                   "--joy-palette-primary-plainActiveBg": "transparent",
                   color: "text.primary",
                   lineHeight: "130%",
-                  fontSize: "1.5rem",
+                  fontSize: FONT_SIZES.md,
                   "&:hover": {
                     fontWeight: "bold",
                     transition: "font-weight 0.2s",

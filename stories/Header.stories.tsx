@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import Drawer, { DrawerMenuItem } from "../src/components/Drawer";
 import Header from "../src/components/Header";
 
@@ -43,5 +44,11 @@ export const WithMenu: Story = {
 export const WithAnchorMenu: Story = {
   args: {
     pageMenu: [1, 2, 3].map((i) => ({ label: `Anchor ${i}`, href: `#a${i}` })),
+  },
+};
+
+export const Collapsed: Story = {
+  args: {
+    collapsed: true,
   },
 };
