@@ -51,6 +51,9 @@ export const components = {
         ...(ownerState.level === "h2" && {
           paddingBottom: "1.6rem",
         }),
+        ...(ownerState.level === "h3" && {
+          paddingBottom: "1rem",
+        }),
         ...(ownerState.level === "body-lg" && {
           paddingBottom: "1.6rem",
         }),
