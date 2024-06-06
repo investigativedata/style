@@ -24,8 +24,8 @@ export default function Screen({
       component="section"
       sx={{
         backgroundColor: BACKGROUND_VARS[background],
-        paddingTop: 12,
-        paddingBottom: 12,
+        paddingTop: 9,
+        paddingBottom: 9,
         display: "flex",
         width: "100%",
         minHeight: fullHeight ? "100vh" : "auto",

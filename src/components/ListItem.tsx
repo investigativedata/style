@@ -33,10 +33,12 @@ interface IOrderedListItemProps {
 const CircleNumber = ({ ix }: { ix: number }) => (
   <span
     style={{
-      border: `4px solid ${BLACK}`,
+      border: `3px solid ${BLACK}`,
       borderRadius: "100%",
-      width: "3.5rem",
-      height: "3.5rem",
+      width: "2.8rem",
+      height: "2.8rem",
+      // width: "clamp(2rem, 7vw, 2.8rem)",
+      // height: "clamp(2rem, 7vw, 2.8rem)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -49,8 +51,8 @@ const CircleNumber = ({ ix }: { ix: number }) => (
 
 export function UnorderedListItem(props: React.PropsWithChildren) {
   return (
-    <ListItem {...props} sx={{ gap: "2rem" }}>
-      <ListItemDecorator sx={{ flex: "0 0 4rem", alignContent: "center" }}>
+    <ListItem {...props} sx={{ gap: "1.6rem" }}>
+      <ListItemDecorator sx={{ flex: "0 0 3.2rem", alignContent: "center" }}>
         <Checkmark />
       </ListItemDecorator>
       <ListItemContent>{props.children}</ListItemContent>
@@ -62,8 +64,8 @@ export function OrderedListItem(
   props: React.PropsWithChildren<IOrderedListItemProps>,
 ) {
   return (
-    <ListItem {...props} sx={{ gap: "2rem" }}>
-      <ListItemDecorator sx={{ flex: "0 0 4rem" }}>
+    <ListItem {...props} sx={{ gap: "1.6rem" }}>
+      <ListItemDecorator sx={{ flex: "0 0 3.2rem" }}>
         <CircleNumber ix={props.ix} />
       </ListItemDecorator>
       <ListItemContent>{props.children}</ListItemContent>

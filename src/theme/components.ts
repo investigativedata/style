@@ -5,12 +5,7 @@ import { ChipOwnerState } from "@mui/joy/Chip";
 import { linkClasses } from "@mui/joy/Link";
 import { TypographyOwnerState } from "@mui/joy/Typography";
 import { BACKGROUNDS, BLACK } from "./colors";
-
-export const FONT_SIZES = {
-  lg: "clamp(1.5rem, 7vw, 2.5rem)",
-  md: "clamp(1rem, 7vw, 1.5rem)",
-  sm: "1rem",
-};
+import { FONT_SIZES } from "./typography";
 
 const FORM_INPUT = {
   defaultProps: {
@@ -19,7 +14,7 @@ const FORM_INPUT = {
   },
   styleOverrides: {
     root: {
-      padding: "10px",
+      padding: "8px",
       borderRadius: "0",
       borderWidth: "3px",
       color: BLACK,
@@ -51,13 +46,13 @@ export const components = {
         padding: 0,
         paddingBotton: "1rem",
         ...(ownerState.level === "h1" && {
-          paddingBottom: "2rem",
+          paddingBottom: "1.6rem",
         }),
         ...(ownerState.level === "h2" && {
-          paddingBottom: "2rem",
+          paddingBottom: "1.6rem",
         }),
         ...(ownerState.level === "body-lg" && {
-          paddingBottom: "2rem",
+          paddingBottom: "1.6rem",
         }),
         ...(ownerState.level === "body-md" && {
           paddingBottom: "1rem",
@@ -83,7 +78,7 @@ export const components = {
   JoyFormLabel: {
     styleOverrides: {
       root: {
-        fontSize: "24px",
+        fontSize: FONT_SIZES.md,
       },
     },
   },
@@ -96,7 +91,7 @@ export const components = {
         root: {
           margin: 0,
           paddingTop: 0,
-          paddingBottom: "48px",
+          paddingBottom: "2.4rem",
         },
       },
     },
@@ -107,8 +102,8 @@ export const components = {
         fontWeight: 700,
         lineHeight: "120%" /* 42px */,
         letterSpacing: "-0.7px",
-        padding: "10px 20px",
-        borderRadius: "40px",
+        padding: "8px 16px",
+        borderRadius: "32px",
         borderWidth: "4px",
         color: BLACK,
         borderColor: BLACK,
@@ -136,7 +131,7 @@ export const components = {
     styleOverrides: {
       root: ({ ownerState }: { ownerState: CardOwnerState }) => ({
         color: BLACK,
-        padding: "3rem 3rem 4rem 3rem",
+        padding: "2.4rem 2.4rem 3.2rem 2.4rem",
         borderWidth: "4px",
         borderColor: BLACK,
         borderRadius: "2rem",
@@ -161,8 +156,8 @@ export const components = {
           bgcolor: "inherit",
         },
         "& svg": {
-          width: "52px",
-          height: "52px",
+          width: "2.6rem",
+          height: "2.6rem",
           stroke: 0,
           fill: BLACK,
         },
@@ -177,7 +172,7 @@ export const components = {
           sx: {
             color: BLACK,
             // bgcolor: "#1DE9B6", // FIXME
-            padding: "10rem 4rem",
+            padding: "8rem 3.2rem",
             boxShadow: `-4px 4px 0px 0px ${BLACK}`,
           },
         },
@@ -207,16 +202,16 @@ export const components = {
         ...(ownerState.size === "sm" && {
           padding: "0.25rem 1rem",
           borderRadius: "1rem",
-          fontSize: "1rem",
+          fontSize: FONT_SIZES.sm,
         }),
         ...(ownerState.size === "md" && {
           padding: "0.25rem 1rem",
-          fontSize: "1.5rem",
+          fontSize: FONT_SIZES.md,
           borderRadius: "1.5rem",
         }),
         ...(ownerState.size === "lg" && {
           padding: "0.25rem 1rem",
-          fontSize: "2.0rem",
+          fontSize: FONT_SIZES.lg,
           borderRadius: "2rem",
         }),
       }),

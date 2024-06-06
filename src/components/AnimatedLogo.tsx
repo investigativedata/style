@@ -9,7 +9,7 @@ export default function AnimatedLogo({ href = "/" }: { href?: string }) {
         autoplay
         loop
         src={src}
-        style={{ height: "3.125rem", width: "auto" }}
+        style={{ height: "2.5rem", width: "auto" }}
       ></Player>
     </a>
   );

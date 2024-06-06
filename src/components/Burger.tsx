@@ -8,9 +8,9 @@ export default function Burger({
   return (
     <AspectRatio
       ratio="65/35"
-      style={{ width: "113px", height: "35px" }}
+      style={{ width: "clamp(60px, 7vw, 90px)", height: "clamp(19px, 7vw, 28px" }}
       sx={{
-        p: "0 24px",
+        p: "0 18px",
         "&:hover": {
           cursor: "pointer",
         },

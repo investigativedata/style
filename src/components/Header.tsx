@@ -53,8 +53,8 @@ export default function Header({
       component="header"
       sx={{
         width: "100%",
-        pt: isCollapsed ? "1rem" : "1.25rem",
-        pb: usePageMenu ? 0 : isCollapsed ? "1rem" : "1.25rem",
+        pt: isCollapsed ? "0.8rem" : "1rem",
+        pb: usePageMenu ? 0 : isCollapsed ? "0.8rem" : "1rem",
         backgroundColor: BACKGROUND_VARS[color],
         position: fixed ? "fixed" : "relative",
         zIndex: 1000,
@@ -70,13 +70,13 @@ export default function Header({
           justifyContent="space-between"
           alignItems="center"
           spacing={2}
-          height={isCollapsed ? "auto" : "110px"}
+          height={isCollapsed ? "auto" : "90px"}
         >
           <StackItem justifyContent="left">
             <Typography
               level="h3"
               sx={{
-                fs: "1.3125rem",
+                fs: "1rem",
                 p: 0,
               }}
               fontWeight={section ? 400 : 700}

@@ -30,7 +30,7 @@ export default function Hero({
   action,
 }: IHero) {
   const Media = mediaSrc ? (
-    <Box maxWidth="sm" sx={{ p: 6 }}>
+    <Box maxWidth="sm" sx={{ p: 4 }}>
       <Image
         src={mediaSrc}
         variant={mediaBorder ? "outlined" : "plain"}
@@ -57,7 +57,7 @@ export default function Hero({
       alignItems="center"
       alignContent="center"
       justifyContent="space-between"
-      spacing={8}
+      spacing={6}
       width="100%"
       margin="0"
       padding="0"

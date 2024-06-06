@@ -6,7 +6,7 @@ import MuiDrawer from "@mui/joy/Drawer";
 import Link, { LinkProps } from "@mui/joy/Link";
 import ModalClose from "@mui/joy/ModalClose";
 import { BLACK } from "../theme/colors";
-import { FONT_SIZES } from "../theme/components";
+import { FONT_SIZES } from "../theme/typography";
 import Burger from "./Burger";
 
 interface IDrawer {
@@ -37,7 +37,7 @@ const LinkSX: SxProps = {
   fontSize: FONT_SIZES.lg,
   fontWeight: 500,
   lineHeight: "130%",
-  mb: "3rem",
+  mb: "clamp(1.4rem, 7vw, 2.4rem)",
   textDecoration: "none",
   "&:hover": {
     textDecoration: "underline",

@@ -2,54 +2,62 @@ import { TypographySystemOptions } from "@mui/joy/styles/types";
 
 type Typography = Partial<TypographySystemOptions>;
 
+export const FONT_SIZES = {
+  xxl: "clamp(2rem, 7vw, 4rem)",
+  xl: "clamp(1.6rem, 7vw, 3.2rem)",
+  lg: "clamp(1.2rem, 0.8571rem + 1.5238vw, 2rem)",
+  md: "clamp(0.8rem, 7vw, 1.2rem)",
+  sm: "0.8rem",
+};
+
 export const typography: Typography = {
   h1: {
-    fontSize: "clamp(2.5rem, 7vw, 5rem)",
+    fontSize: FONT_SIZES.xxl,
     fontFamily: "Sligoil Micro",
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "100%",
-    letterSpacing: "-0.12rem",
+    letterSpacing: "-0.096rem",
   },
   h2: {
-    fontSize: "clamp(2rem, 7vw, 4rem)",
+    fontSize: FONT_SIZES.xl,
     fontStyle: "normal",
     fontWeight: 600,
     lineHeight: "120%",
-    letterSpacing: "-0.04rem",
+    letterSpacing: "-0.032rem",
   },
   h3: {
-    fontSize: "clamp(1rem, 7vw, 1.5rem)",
+    fontSize: FONT_SIZES.md,
     fontStyle: "normal",
     fontWeight: 700,
     lineHeight: "130%",
   },
   "title-lg": {
-    fontSize: "clamp(1.5rem, 7vw, 2.5rem)",
+    fontSize: FONT_SIZES.lg,
     fontStyle: "normal",
     fontWeight: 700,
     lineHeight: "130%",
-    letterSpacing: "-0.05rem",
+    letterSpacing: "-0.04rem",
   },
   "body-lg": {
-    fontSize: "clamp(1.5rem, 7vw, 2.5rem)",
+    fontSize: FONT_SIZES.lg,
     fontStyle: "normal",
     fontWeight: 500,
     lineHeight: "130%",
-    letterSpacing: "-0.05rem",
+    letterSpacing: "-0.04rem",
   },
   "body-md": {
-    fontSize: "clamp(1rem, 7vw, 1.5rem)",
+    fontSize: FONT_SIZES.md,
     fontStyle: "normal",
     fontWeight: 400,
-    lineHeight: "31.2px",
+    lineHeight: "130%",
     letterSpacing: "-2%",
   },
   "body-sm": {
     color: "inherit",
-    fontSize: "1rem",
+    fontSize: FONT_SIZES.sm,
     fontStyle: "normal",
     fontWeight: 400,
-    lineHeight: "20.8px",
+    lineHeight: "130%",
   },
 };
