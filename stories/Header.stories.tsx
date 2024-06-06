@@ -46,3 +46,9 @@ export const WithAnchorMenu: Story = {
     pageMenu: [1, 2, 3].map((i) => ({ label: `Anchor ${i}`, href: `#a${i}` })),
   },
 };
+
+export const Collapsed: Story = {
+  args: {
+    collapsed: true,
+  },
+};

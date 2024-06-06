@@ -16,6 +16,7 @@ const Page = () => (
     <HeaderContext>
       <Header
         fixed
+        section="Section"
         pageMenu={[1, 2, 3].map((i) => ({
           label: `Anchor ${i}`,
           href: `#a${i}`,
