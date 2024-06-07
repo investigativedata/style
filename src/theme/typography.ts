@@ -18,6 +18,7 @@ export const typography: Typography = {
     fontWeight: 400,
     lineHeight: "100%",
     letterSpacing: "-0.096rem",
+    hyphens: "none",
   },
   h2: {
     fontSize: FONT_SIZES.xl,
@@ -25,12 +26,14 @@ export const typography: Typography = {
     fontWeight: 600,
     lineHeight: "120%",
     letterSpacing: "-0.032rem",
+    hyphens: "auto",
   },
   h3: {
     fontSize: FONT_SIZES.md,
     fontStyle: "normal",
     fontWeight: 700,
     lineHeight: "130%",
+    hyphens: "auto",
   },
   "title-lg": {
     fontSize: FONT_SIZES.lg,
@@ -38,6 +41,7 @@ export const typography: Typography = {
     fontWeight: 700,
     lineHeight: "130%",
     letterSpacing: "-0.04rem",
+    hyphens: "auto",
   },
   "body-lg": {
     fontSize: FONT_SIZES.lg,
@@ -45,6 +49,7 @@ export const typography: Typography = {
     fontWeight: 500,
     lineHeight: "130%",
     letterSpacing: "-0.04rem",
+    hyphens: "auto",
   },
   "body-md": {
     fontSize: FONT_SIZES.md,
@@ -52,6 +57,7 @@ export const typography: Typography = {
     fontWeight: 400,
     lineHeight: "130%",
     letterSpacing: "-2%",
+    hyphens: "auto",
   },
   "body-sm": {
     color: "inherit",
@@ -59,5 +65,6 @@ export const typography: Typography = {
     fontStyle: "normal",
     fontWeight: 400,
     lineHeight: "130%",
+    hyphens: "auto",
   },
 };
