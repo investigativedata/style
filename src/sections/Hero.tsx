@@ -52,7 +52,11 @@ export default function Hero({
           tagLine={tagLine}
         />
       )}
-      {teaser && <Typography component="span">{teaser}</Typography>}
+      {teaser && (
+        <Typography sx={{ hyphens: "none" }} component="span">
+          {teaser}
+        </Typography>
+      )}
       {action}
     </>
   );
@@ -61,7 +65,7 @@ export default function Hero({
       container
       alignItems="center"
       alignContent="center"
-      justifyContent="space-between"
+      justifyContent={{ xs: "center", md: "space-between" }}
       spacing={6}
       gap={{ xs: 4, md: 0 }}
       width="100%"
@@ -71,11 +75,11 @@ export default function Hero({
       <Grid
         md={6}
         p={0}
-        width="100%"
-        // width={{
-        //   xs: "100%",
-        //   md: "calc(100% * 6 / var(--Grid-columns))",
-        // }}
+        width={{
+          xs: "100%",
+          md: "calc(100% * 6 / var(--Grid-columns))",
+        }}
+        maxWidth={{ sm: "70%", md: "auto" }}
         order={{ sm: 1, md: mediaRight ? 2 : 1 }}
         justifyContent="center"
       >

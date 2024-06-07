@@ -22,10 +22,10 @@ export default function Screen({
   return (
     <Box
       component="section"
+      paddingBottom={{ xs: 4, sm: 6, md: 9 }}
+      paddingTop={{ xs: 4, sm: 6, md: 9 }}
       sx={{
         backgroundColor: BACKGROUND_VARS[background],
-        paddingTop: 9,
-        paddingBottom: 9,
         display: "flex",
         width: "100%",
         minHeight: fullHeight ? "100vh" : "auto",
