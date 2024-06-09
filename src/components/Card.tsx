@@ -27,7 +27,16 @@ export default function Card({
         </Typography>
       )}
       <CardContent>{children}</CardContent>
-      {action && <CardActions>{action}</CardActions>}
+      {action && (
+        <CardActions
+          sx={{
+            alignItems: "flex-start",
+            "& > *": { flex: "inherit !important" },
+          }}
+        >
+          {action}
+        </CardActions>
+      )}
     </MuiCard>
   );
 }
