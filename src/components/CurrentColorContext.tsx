@@ -16,9 +16,11 @@ interface IStep {
   readonly scrollPos: number;
 }
 
+const WINDOW = typeof window !== "undefined";
+
 export default function CurrentColorProvider({ children }: PropsWithChildren) {
   const [color, setColor] = useState<ColorPaletteProp>("neutral");
-  const [height, setHeight] = useState<number>(window.innerHeight);
+  const [height, setHeight] = useState<number>(WINDOW ? window.innerHeight : 0);
   const backgroundColor = useMemo(() => color, [color]);
   const colorSteps: IStep[] = [];
 
@@ -28,7 +30,7 @@ export default function CurrentColorProvider({ children }: PropsWithChildren) {
       colorSteps.push({
         color: (e.getAttribute("data-screen-color") ||
           "neutral") as ColorPaletteProp,
-        scrollPos: e.getBoundingClientRect().top + height / 2,
+        scrollPos: e.getBoundingClientRect().bottom - height / 2,
       });
     });
     colorSteps.unshift({ color: colorSteps[0].color, scrollPos: 0 });
@@ -36,22 +38,28 @@ export default function CurrentColorProvider({ children }: PropsWithChildren) {
   }, [height]);
 
   const handleScroll = () => {
-    const position = window.scrollY;
-    const currentStep = colorSteps.find(
-      ({ scrollPos }) => position <= scrollPos,
-    );
-    currentStep && setColor(currentStep.color);
+    if (WINDOW) {
+      const position = window.scrollY || 0;
+      const currentStep = colorSteps.find(
+        ({ scrollPos }) => position <= scrollPos,
+      );
+      currentStep && setColor(currentStep.color);
+    }
   };
 
-  const updateHeight = () => setHeight(window.innerHeight);
+  const updateHeight = () => {
+    WINDOW && setHeight(window.innerHeight || 0);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", updateHeight, { passive: true });
+    WINDOW &&
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    WINDOW &&
+      window.addEventListener("resize", updateHeight, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateHeight);
+      WINDOW && window.removeEventListener("scroll", handleScroll);
+      WINDOW && window.removeEventListener("resize", updateHeight);
     };
   }, []);
 
@@ -60,7 +68,7 @@ export default function CurrentColorProvider({ children }: PropsWithChildren) {
       <Box
         sx={{
           backgroundColor: BACKGROUNDS[backgroundColor],
-          transition: "background 1s ease",
+          transition: "background 0.8s ease",
         }}
       >
         {children}

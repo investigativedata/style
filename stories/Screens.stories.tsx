@@ -24,9 +24,19 @@ const Screens = ({
     <ScreenBorder>
       <Screen
         changeBackgroundOnScroll={changeBackgroundOnScroll}
+        fullHeight={false}
         background="warning"
       >
         warning
+      </Screen>
+    </ScreenBorder>
+    <ScreenBorder>
+      <Screen
+        changeBackgroundOnScroll={changeBackgroundOnScroll}
+        sx={{ height: "200vw" }}
+        background="danger"
+      >
+        danger
       </Screen>
     </ScreenBorder>
     <ScreenBorder>
