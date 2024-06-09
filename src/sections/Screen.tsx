@@ -9,21 +9,23 @@ export interface IScreen {
   readonly maxWidth?: "sm" | "md" | "lg" | "xl";
   readonly background?: ColorPaletteProp;
   readonly fullHeight?: boolean;
+  readonly textAlignCenter?: boolean;
   readonly sx?: SxProps;
 }
 
 export default function Screen({
   background = "neutral",
-  maxWidth = "xl",
+  maxWidth = "lg",
   fullHeight = true,
+  textAlignCenter = false,
   sx = {},
   children,
 }: React.PropsWithChildren<IScreen>) {
   return (
     <Box
       component="section"
-      paddingBottom={{ xs: 4, sm: 6, md: 9 }}
-      paddingTop={{ xs: 4, sm: 6, md: 9 }}
+      paddingBottom={{ xs: 4, sm: 6, md: 9, lg: 12 }}
+      paddingTop={{ xs: 4, sm: 6, md: 9, lg: 12 }}
       sx={{
         backgroundColor: BACKGROUND_VARS[background],
         display: "flex",
@@ -31,6 +33,9 @@ export default function Screen({
         minHeight: fullHeight ? "100vh" : "auto",
         alignItems: "center",
         alignContent: "center",
+        "& *": {
+          textAlign: textAlignCenter ? "center" : "inherit",
+        },
         ...sx,
       }}
     >
