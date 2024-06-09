@@ -4,6 +4,7 @@ import Grid from "@mui/joy/Grid";
 import Typography from "@mui/joy/Typography";
 import Image from "../components/Image";
 import SectionHeader from "../components/SectionHeader";
+import { MARGINS, TMarginSizes } from "../theme/vars";
 
 export interface IHero {
   readonly title?: string;
@@ -16,6 +17,7 @@ export interface IHero {
   readonly mediaRight?: boolean;
   readonly mediaBorder?: boolean;
   readonly mediaRatio?: string;
+  readonly marginBottom?: TMarginSizes;
 }
 
 export default function Hero({
@@ -28,12 +30,13 @@ export default function Hero({
   mediaBorder,
   mediaRatio,
   action,
+  marginBottom = "lg",
 }: IHero) {
   const Media = mediaSrc ? (
     <Box
       maxWidth="sm"
       padding={{ sm: 4, md: 8 }}
-      paddingTop={10}
+      paddingTop={{ sm: 4, md: 10 }}
       paddingBottom={{ sm: 4, md: 10 }}
     >
       <Image
@@ -71,6 +74,7 @@ export default function Hero({
       width="100%"
       margin="0"
       padding="0"
+      marginBottom={MARGINS[marginBottom]}
     >
       <Grid
         xs={12}

@@ -1,4 +1,6 @@
 export { default as theme } from "./theme";
+export * from "./theme/vars";
+export * from "./theme/colors";
 
 export { default as Animation } from "./components/Animation";
 export { default as ArrowDown } from "./components/ArrowDown";

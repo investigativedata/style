@@ -23,7 +23,7 @@ export default function MediaScreen({
         ratio={ratio}
         variant="plain"
         sx={{
-          borderTop: `${STROKE_WIDTH} ${STROKE_WIDTH} 4px solid`,
+          borderTop: `${STROKE_WIDTH} solid`,
           borderBottom: `${STROKE_WIDTH} solid`,
         }}
       >
