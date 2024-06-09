@@ -8,7 +8,7 @@ export interface IImage extends AspectRatioProps {
 export default function Image(props: IImage) {
   return (
     <AspectRatio {...props}>
-      <img src={props.src} alt={props.alt || ""} />
+      <img src={props.src} alt={props.alt || ""} loading="lazy" />
     </AspectRatio>
   );
 }
