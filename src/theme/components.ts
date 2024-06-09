@@ -5,7 +5,7 @@ import { ChipOwnerState } from "@mui/joy/Chip";
 import { linkClasses } from "@mui/joy/Link";
 import { TypographyOwnerState } from "@mui/joy/Typography";
 import { BACKGROUNDS, BLACK } from "./colors";
-import { FONT_SIZES } from "./typography";
+import { FONT_SIZES, STROKE_WIDTH } from "./vars";
 
 const FORM_INPUT = {
   defaultProps: {
@@ -16,7 +16,7 @@ const FORM_INPUT = {
     root: {
       padding: "8px",
       borderRadius: "0",
-      borderWidth: "3px",
+      borderWidth: STROKE_WIDTH,
       color: BLACK,
       borderColor: BLACK,
     },
@@ -90,16 +90,10 @@ export const components = {
       size: "lg",
       variant: "outlined",
       color: "neutral",
-      styleOverrides: {
-        root: {
-          margin: 0,
-          paddingTop: 0,
-          paddingBottom: "2.4rem",
-        },
-      },
     },
     styleOverrides: {
       root: ({ ownerState }: { ownerState: ButtonOwnerState }) => ({
+        margin: 0,
         fontSize: FONT_SIZES[ownerState.size || "lg"],
         fontStyle: "normal",
         fontWeight: 700,
@@ -107,7 +101,8 @@ export const components = {
         letterSpacing: "-0.7px",
         padding: "8px 16px",
         borderRadius: "32px",
-        borderWidth: "4px",
+        borderWidth: STROKE_WIDTH,
+        alignSelf: "flex-start",
         color: BLACK,
         borderColor: BLACK,
         backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
@@ -135,7 +130,7 @@ export const components = {
       root: ({ ownerState }: { ownerState: CardOwnerState }) => ({
         color: BLACK,
         padding: "2.4rem 2.4rem 3.2rem 2.4rem",
-        borderWidth: "4px",
+        borderWidth: STROKE_WIDTH,
         borderColor: BLACK,
         borderRadius: "2rem",
         backgroundColor: BACKGROUNDS[ownerState.color || "neutral"],
@@ -145,7 +140,7 @@ export const components = {
   JoyDivider: {
     styleOverrides: {
       root: {
-        borderTop: `4px solid ${BLACK}`,
+        borderTop: `${STROKE_WIDTH} solid ${BLACK}`,
       },
     },
   },
@@ -176,7 +171,7 @@ export const components = {
             color: BLACK,
             // bgcolor: "#1DE9B6", // FIXME
             padding: "8rem 3.2rem",
-            boxShadow: `-4px 4px 0px 0px ${BLACK}`,
+            boxShadow: `-${STROKE_WIDTH} ${STROKE_WIDTH} 0px ${STROKE_WIDTH} ${BLACK}`,
           },
         },
       },
@@ -230,10 +225,10 @@ export const components = {
         boxShadow: 0,
         borderRadius: 0,
         ...(ownerState.variant === "outlined" && {
-          border: "4px solid",
+          border: `${STROKE_WIDTH} solid`,
           borderColor: BLACK,
           borderRadius: 0,
-          boxShadow: `4px 4px 0px 0px ${BLACK}`,
+          boxShadow: `${STROKE_WIDTH} ${STROKE_WIDTH} 0px 0px ${BLACK}`,
         }),
       }),
       content: {

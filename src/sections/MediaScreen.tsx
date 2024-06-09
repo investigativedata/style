@@ -1,6 +1,7 @@
 import React from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
+import { STROKE_WIDTH } from "../theme/vars";
 
 export interface IMediaScreen {
   readonly ratio?: string;
@@ -21,7 +22,10 @@ export default function MediaScreen({
       <AspectRatio
         ratio={ratio}
         variant="plain"
-        sx={{ borderTop: "4px solid", borderBottom: "4px solid" }}
+        sx={{
+          borderTop: `${STROKE_WIDTH} ${STROKE_WIDTH} 4px solid`,
+          borderBottom: `${STROKE_WIDTH} solid`,
+        }}
       >
         {children}
       </AspectRatio>

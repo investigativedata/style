@@ -3,7 +3,7 @@ import Container from "@mui/joy/Container";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
-import { FONT_SIZES } from "../theme/typography";
+import { FONT_SIZES, STROKE_WIDTH_INT } from "../theme/vars";
 
 export interface IPageMenuItem {
   readonly label: string;
@@ -16,12 +16,12 @@ export default function PageMenu({ items }: { items: IPageMenuItem[] }) {
       component="nav"
       aria-label="Page menu"
       sx={{ flexGrow: 1 }}
-      borderTop={4}
-      borderBottom={4}
+      borderTop={STROKE_WIDTH_INT}
+      borderBottom={STROKE_WIDTH_INT}
       borderColor="text.primary"
       overflow="auto"
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <List
           role="menubar"
           orientation="horizontal"
