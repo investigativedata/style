@@ -6,7 +6,7 @@ import MuiDrawer from "@mui/joy/Drawer";
 import Link, { LinkProps } from "@mui/joy/Link";
 import ModalClose from "@mui/joy/ModalClose";
 import { BLACK } from "../theme/colors";
-import { FONT_SIZES } from "../theme/typography";
+import { FONT_SIZES } from "../theme/vars";
 import Burger from "./Burger";
 
 interface IDrawer {
