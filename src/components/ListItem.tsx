@@ -55,7 +55,9 @@ export function UnorderedListItem(props: React.PropsWithChildren) {
       <ListItemDecorator sx={{ flex: "0 0 3.2rem", alignContent: "center" }}>
         <Checkmark />
       </ListItemDecorator>
-      <ListItemContent>{props.children}</ListItemContent>
+      <ListItemContent sx={{ "&, & > *": { textAlign: "left !important" } }}>
+        {props.children}
+      </ListItemContent>
     </ListItem>
   );
 }
