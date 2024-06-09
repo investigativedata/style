@@ -4,6 +4,7 @@ import Grid from "@mui/joy/Grid";
 import Typography from "@mui/joy/Typography";
 import Image from "../components/Image";
 import SectionHeader from "../components/SectionHeader";
+import { MARGINS, TMarginSizes } from "../theme/vars";
 
 export interface IHero {
   readonly title?: string;
@@ -16,6 +17,7 @@ export interface IHero {
   readonly mediaRight?: boolean;
   readonly mediaBorder?: boolean;
   readonly mediaRatio?: string;
+  readonly marginBottom?: TMarginSizes;
 }
 
 export default function Hero({
@@ -28,12 +30,13 @@ export default function Hero({
   mediaBorder,
   mediaRatio,
   action,
+  marginBottom = "lg",
 }: IHero) {
   const Media = mediaSrc ? (
     <Box
       maxWidth="sm"
       padding={{ sm: 4, md: 8 }}
-      paddingTop={10}
+      paddingTop={{ sm: 4, md: 10 }}
       paddingBottom={{ sm: 4, md: 10 }}
     >
       <Image
@@ -52,7 +55,11 @@ export default function Hero({
           tagLine={tagLine}
         />
       )}
-      {teaser && <Typography component="span">{teaser}</Typography>}
+      {teaser && (
+        <Typography sx={{ hyphens: "none" }} component="span">
+          {teaser}
+        </Typography>
+      )}
       {action}
     </>
   );
@@ -61,33 +68,24 @@ export default function Hero({
       container
       alignItems="center"
       alignContent="center"
-      justifyContent="space-between"
+      justifyContent={{ xs: "center", md: "space-between" }}
       spacing={6}
       gap={{ xs: 4, md: 0 }}
       width="100%"
       margin="0"
       padding="0"
+      marginBottom={MARGINS[marginBottom]}
     >
       <Grid
-        md={6}
+        xs={12}
+        md={5}
         p={0}
-        width="100%"
-        // width={{
-        //   xs: "100%",
-        //   md: "calc(100% * 6 / var(--Grid-columns))",
-        // }}
         order={{ sm: 1, md: mediaRight ? 2 : 1 }}
         justifyContent="center"
       >
         {Media}
       </Grid>
-      <Grid
-        md={6}
-        order={{ sm: 2, md: mediaRight ? 1 : 2 }}
-        p={0}
-        paddingLeft={{ sm: 0, md: mediaRight ? 0 : 4 }}
-        textAlign={{ xs: "center", md: "inherit" }}
-      >
+      <Grid xs={12} md={6} order={{ sm: 2, md: mediaRight ? 1 : 2 }} p={0}>
         {Content}
       </Grid>
     </Grid>

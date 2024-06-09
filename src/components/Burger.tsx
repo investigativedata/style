@@ -1,4 +1,5 @@
 import AspectRatio from "@mui/joy/AspectRatio";
+import { STROKE_WIDTH_INT } from "../theme/vars";
 
 export default function Burger({
   onClick,
@@ -29,7 +30,7 @@ export default function Burger({
             id="Vector"
             d="M2.22217 32.6389H62.7777"
             stroke="#1A1A1A"
-            strokeWidth="4"
+            strokeWidth={STROKE_WIDTH_INT}
             strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -38,7 +39,7 @@ export default function Burger({
             id="Vector_2"
             d="M2.22217 17.5H62.7777"
             stroke="#1A1A1A"
-            strokeWidth="4"
+            strokeWidth={STROKE_WIDTH_INT}
             strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -47,7 +48,7 @@ export default function Burger({
             id="Vector_3"
             d="M2.22217 2.36111H62.7777"
             stroke="#1A1A1A"
-            strokeWidth="4"
+            strokeWidth={STROKE_WIDTH_INT}
             strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"

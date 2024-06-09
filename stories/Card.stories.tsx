@@ -45,6 +45,14 @@ export const Default: Story = {
   },
 };
 
+export const WithAction: Story = {
+  args: {
+    title: "Card title",
+    children: <ExampleContent />,
+    action: <Button>Click here</Button>,
+  },
+};
+
 export const WithIcon: Story = {
   args: {
     icon: "./mojis/person-trump.svg",

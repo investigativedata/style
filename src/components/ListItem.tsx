@@ -2,6 +2,7 @@ import ListItem from "@mui/joy/ListItem";
 import ListItemContent from "@mui/joy/ListItemContent";
 import ListItemDecorator from "@mui/joy/ListItemDecorator";
 import { BLACK } from "../theme/colors";
+import { STROKE_WIDTH, STROKE_WIDTH_INT } from "../theme/vars";
 
 const Checkmark = () => (
   <svg
@@ -18,7 +19,7 @@ const Checkmark = () => (
     <path
       d="M10.5 39.7599L27.92 57.1999L61.5 23.3099L53.487 15.2969L27.777 41.0069L18.517 31.7469L10.5 39.7599Z"
       stroke="#1A1A1A"
-      strokeWidth="4"
+      strokeWidth={STROKE_WIDTH_INT}
       strokeMiterlimit="10"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -33,7 +34,7 @@ interface IOrderedListItemProps {
 const CircleNumber = ({ ix }: { ix: number }) => (
   <span
     style={{
-      border: `3px solid ${BLACK}`,
+      border: `${STROKE_WIDTH} solid ${BLACK}`,
       borderRadius: "100%",
       width: "2.8rem",
       height: "2.8rem",
@@ -55,7 +56,9 @@ export function UnorderedListItem(props: React.PropsWithChildren) {
       <ListItemDecorator sx={{ flex: "0 0 3.2rem", alignContent: "center" }}>
         <Checkmark />
       </ListItemDecorator>
-      <ListItemContent>{props.children}</ListItemContent>
+      <ListItemContent sx={{ "&, & > *": { textAlign: "left !important" } }}>
+        {props.children}
+      </ListItemContent>
     </ListItem>
   );
 }

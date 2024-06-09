@@ -9,8 +9,8 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
-import { HeaderScrollContext } from "./HeaderContext";
 import PageMenu, { IPageMenuItem } from "./PageMenu";
+import { ScrollContext } from "./ScrollContext";
 
 interface IHeaderProps {
   readonly homepage?: string;
@@ -23,7 +23,6 @@ interface IHeaderProps {
   readonly collapsed?: boolean;
 }
 
-// FIXME find right type for responsive style object
 interface IStackItem extends BoxProps {
   readonly hide?: boolean;
 }
@@ -54,7 +53,7 @@ export default function Header({
   sx = {},
 }: IHeaderProps) {
   const usePageMenu = pageMenu && pageMenu.length > 0;
-  const isCollapsed = collapsed || useContext(HeaderScrollContext);
+  const isCollapsed = collapsed || useContext(ScrollContext) > 180;
   return (
     <Box
       component="header"
@@ -83,10 +82,6 @@ export default function Header({
           <StackItem
             justifyContent="left"
             width={{ xs: isCollapsed ? "50%" : "100%", sm: "auto" }}
-            // margin={{
-            //   xs: "0 0 1rem 0 !important",
-            //   sm: "0 1rem 0 0 !important",
-            // }}
           >
             <Typography
               level="h3"
