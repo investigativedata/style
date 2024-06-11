@@ -1,7 +1,8 @@
-import { AspectRatioOwnerState } from "@mui/joy";
+import { AspectRatioOwnerState } from "@mui/joy/AspectRatio";
 import { ButtonOwnerState, buttonClasses } from "@mui/joy/Button";
 import { CardOwnerState } from "@mui/joy/Card";
 import { ChipOwnerState } from "@mui/joy/Chip";
+import { DrawerOwnerState } from "@mui/joy/Drawer";
 import { linkClasses } from "@mui/joy/Link";
 import { TypographyOwnerState } from "@mui/joy/Typography";
 import { BACKGROUNDS, BLACK } from "./colors";
@@ -165,16 +166,20 @@ export const components = {
   JoyDrawer: {
     defaultProps: {
       anchor: "right",
-      slotProps: {
-        content: {
-          sx: {
-            color: BLACK,
-            // bgcolor: "#1DE9B6", // FIXME
-            padding: "8rem 3.2rem",
-            boxShadow: `-${STROKE_WIDTH} ${STROKE_WIDTH} 0px ${STROKE_WIDTH} ${BLACK}`,
-          },
-        },
-      },
+    },
+    styleOverrides: {
+      content: ({ ownerState }: { ownerState: DrawerOwnerState }) => ({
+        color: BLACK,
+        padding: "6rem 3rem",
+        [`border${
+          {
+            bottom: "Top",
+            left: "Right",
+            right: "Left",
+            top: "Bottom",
+          }[ownerState.anchor || "right"]
+        }`]: `${STROKE_WIDTH} solid ${BLACK}`,
+      }),
     },
   },
   JoyBreadcrumbs: {

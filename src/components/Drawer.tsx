@@ -16,7 +16,7 @@ interface IDrawer {
 
 export default function Drawer({
   children,
-  anchor,
+  anchor = "right",
   title,
 }: React.PropsWithChildren<IDrawer>) {
   const [open, setOpen] = React.useState(false);
