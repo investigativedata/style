@@ -43,6 +43,7 @@ export default function Hero({
         src={mediaSrc}
         variant={mediaBorder ? "outlined" : "plain"}
         ratio={mediaRatio}
+        margin="none"
       />
     </Box>
   ) : null;
@@ -77,11 +78,12 @@ export default function Hero({
       marginBottom={MARGINS[marginBottom]}
     >
       <Grid
-        xs={12}
+        xs={mediaBorder ? 12 : 6}
         md={5}
         p={0}
         order={{ sm: 1, md: mediaRight ? 2 : 1 }}
         justifyContent="center"
+        alignItems="center"
       >
         {Media}
       </Grid>

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import CurrentColorProvider from "../src/components/CurrentColorContext";
+import PageContextProvider from "../src/components/PageContext";
 import Screen from "../src/sections/Screen";
 
 const ScreenBorder = ({ children }: React.PropsWithChildren) => {
@@ -12,7 +12,7 @@ const Screens = ({
 }: {
   changeBackgroundOnScroll?: boolean;
 }) => (
-  <CurrentColorProvider>
+  <PageContextProvider>
     <ScreenBorder>
       <Screen
         changeBackgroundOnScroll={changeBackgroundOnScroll}
@@ -47,7 +47,7 @@ const Screens = ({
         success
       </Screen>
     </ScreenBorder>
-  </CurrentColorProvider>
+  </PageContextProvider>
 );
 
 const meta = {
