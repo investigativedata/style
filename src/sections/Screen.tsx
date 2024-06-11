@@ -31,7 +31,7 @@ export default function Screen({
       component="section"
       paddingBottom={MARGINS[padding]}
       paddingTop={MARGINS[padding]}
-      data-screen-color={background}
+      data-background-color={background}
       sx={{
         backgroundColor: changeBackgroundOnScroll
           ? "inherit"

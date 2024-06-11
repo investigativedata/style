@@ -14,7 +14,7 @@ import { ScrollContext } from "./ScrollContext";
 
 interface IHeaderProps {
   readonly homepage?: string;
-  readonly color?: ColorPaletteProp;
+  readonly color?: ColorPaletteProp | "inherit";
   readonly fixed?: boolean;
   readonly section?: string;
   readonly drawer?: React.ReactNode;
@@ -61,7 +61,7 @@ export default function Header({
         width: "100%",
         pt: isCollapsed ? "0.8rem" : "1rem",
         pb: usePageMenu ? 0 : isCollapsed ? "0.8rem" : "1rem",
-        backgroundColor: BACKGROUND_VARS[color],
+        backgroundColor: BACKGROUND_VARS[color] || "inherit",
         position: fixed ? "fixed" : "relative",
         zIndex: 1000,
         display: "flex",
