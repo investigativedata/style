@@ -9,8 +9,8 @@ import { ColorPaletteProp } from "@mui/joy/styles";
 import { BACKGROUND_VARS } from "../theme/colors";
 import AnimatedLogo from "./AnimatedLogo";
 import Burger from "./Burger";
+import { PageContext } from "./PageContext";
 import PageMenu, { IPageMenuItem } from "./PageMenu";
-import { ScrollContext } from "./ScrollContext";
 
 interface IHeaderProps {
   readonly homepage?: string;
@@ -26,6 +26,8 @@ interface IHeaderProps {
 interface IStackItem extends BoxProps {
   readonly hide?: boolean;
 }
+
+const HIDE_MOBILE = { display: { xs: "none", md: "inherit" } };
 
 const StackItem = ({
   children,
@@ -53,14 +55,16 @@ export default function Header({
   sx = {},
 }: IHeaderProps) {
   const usePageMenu = pageMenu && pageMenu.length > 0;
-  const isCollapsed = collapsed || useContext(ScrollContext) > 180;
+  const { headerCollapsed } = useContext(PageContext);
+  const isCollapsed = collapsed || headerCollapsed;
+
   return (
     <Box
       component="header"
       sx={{
         width: "100%",
-        pt: isCollapsed ? "0.8rem" : "1rem",
-        pb: usePageMenu ? 0 : isCollapsed ? "0.8rem" : "1rem",
+        pt: { xs: "0.8rem", md: isCollapsed ? "0.8rem" : "1rem" },
+        pb: { xs: "0.8rem", md: 0 },
         backgroundColor: BACKGROUND_VARS[color] || "inherit",
         position: fixed ? "fixed" : "relative",
         zIndex: 1000,
@@ -77,7 +81,7 @@ export default function Header({
           alignItems="center"
           flexWrap={{ xs: "wrap", sm: "nowrap" }}
           spacing={2}
-          height={isCollapsed ? "auto" : "90px"}
+          height={{ xs: "auto", md: isCollapsed ? "auto" : "90px" }}
         >
           <StackItem
             justifyContent="left"
@@ -89,8 +93,9 @@ export default function Header({
                 fs: "1rem",
                 p: 0,
                 m: 0,
+                ...HIDE_MOBILE,
               }}
-              fontWeight={section ? 400 : 700}
+              fontWeight={section ? 500 : 700}
             >
               <Link
                 sx={{
@@ -107,8 +112,8 @@ export default function Header({
                   component="strong"
                   fontWeight={700}
                   display={{ xs: "block", sm: "inline" }}
+                  marginLeft={{ md: "0.3rem" }}
                 >
-                  {" "}
                   {section}
                 </Typography>
               )}
@@ -131,7 +136,7 @@ export default function Header({
           </StackItem>
         </Stack>
       </Container>
-      {usePageMenu && <PageMenu items={pageMenu} />}
+      <Box sx={HIDE_MOBILE}>{usePageMenu && <PageMenu items={pageMenu} />}</Box>
     </Box>
   );
 }
