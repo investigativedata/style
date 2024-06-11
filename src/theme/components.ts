@@ -130,7 +130,7 @@ export const components = {
     styleOverrides: {
       root: ({ ownerState }: { ownerState: CardOwnerState }) => ({
         color: BLACK,
-        padding: "2.4rem 2.4rem 3.2rem 2.4rem",
+        padding: "1.6rem",
         borderWidth: STROKE_WIDTH,
         borderColor: BLACK,
         borderRadius: "2rem",
