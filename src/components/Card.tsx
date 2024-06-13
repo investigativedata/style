@@ -26,7 +26,7 @@ export default function Card({
           {title}
         </Typography>
       )}
-      <CardContent>{children}</CardContent>
+      <CardContent sx={{ width: "100%" }}>{children}</CardContent>
       {action && (
         <CardActions
           sx={{
