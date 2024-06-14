@@ -3,7 +3,6 @@ import CssBaseline from "@mui/joy/CssBaseline";
 import { CssVarsProvider } from "@mui/joy/styles";
 import type { Preview } from "@storybook/react";
 import theme from "../src/theme";
-import { BackgroundsStyles } from '../src/components/BackgroundsStyles';
 
 const preview: Preview = {
   parameters: {
@@ -21,7 +20,6 @@ const preview: Preview = {
     (Story) => (
       <CssVarsProvider theme={theme}>
         <CssBaseline />
-        <BackgroundsStyles />
         <Story />
       </CssVarsProvider>
     ),

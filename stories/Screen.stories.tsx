@@ -16,13 +16,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    background: "pink",
+    background: "neutral",
   },
 };
 
 export const WithContent: Story = {
   args: {
-    background: "plum",
     children: (
       <Typography>
         Accusamus eaque nostrum et perferendis non totam dolorem ratione. Facere
