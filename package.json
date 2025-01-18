@@ -1,6 +1,6 @@
 {
   "name": "@investigativedata/style",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Style (guide) and React components for investigativedata.io",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
