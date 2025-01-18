@@ -5,21 +5,25 @@ const config: StorybookConfig = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+
   staticDirs: ["../static"],
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
+    "@storybook/addon-webpack5-compiler-swc",
+    "@chromatic-com/storybook"
   ],
+
   framework: {
     name: "@storybook/react-webpack5",
     options: {
-      builder: {
-        useSWC: true,
-      },
+      builder: {},
     },
   },
+
   swc: () => ({
     jsc: {
       transform: {
@@ -29,9 +33,7 @@ const config: StorybookConfig = {
       },
     },
   }),
-  docs: {
-    autodocs: "tag",
-  },
+
   // typescript: {
   //   reactDocgen: "react-docgen-typescript",
   //   reactDocgenTypescriptOptions: {
@@ -51,5 +53,10 @@ const config: StorybookConfig = {
   //     //     : true,
   //   },
   // },
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;

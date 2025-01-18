@@ -7,7 +7,6 @@ import theme from "../src/theme";
 const preview: Preview = {
   parameters: {
     layout: "centered",
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       // expanded: true,
       matchers: {
