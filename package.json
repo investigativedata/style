@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
-    "@rive-app/react-canvas-lite": "^4.17.6"
+    "@rive-app/react-canvas-lite": "^4.18.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
@@ -44,13 +44,13 @@
     "@storybook/react": "^8.6.3",
     "@storybook/react-webpack5": "^8.6.3",
     "@storybook/test": "^8.6.3",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
-    "@types/node": "^22.10.7",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^22.13.8",
     "@types/numeral": "^2.0.5",
     "@types/react": "^18.2.59",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.3",
     "postcss-cli": "^11.0.0",
     "postcss-dropdupedvars": "^2.1.0",
     "postcss-import": "^16.1.0",
@@ -58,6 +58,6 @@
     "react-docgen-typescript": "^2.2.2",
     "storybook": "^8.6.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2"
   }
 }
