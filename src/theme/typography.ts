@@ -22,7 +22,7 @@ export const typography: Typography = {
     // hyphens: "auto",
   },
   h3: {
-    fontSize: FONT_SIZES.md,
+    fontSize: FONT_SIZES.lg,
     fontStyle: "normal",
     fontWeight: 700,
     lineHeight: "130%",

@@ -12,8 +12,9 @@ const Ensemble = () => (
   <>
     <Typography level="h1">I am the biggest headline</Typography>
     <Typography>{Paragraph}</Typography>
-    <Typography level="h3">I am a small tag line</Typography>
     <Typography level="h2">I am headline 2</Typography>
+    <Typography>{Paragraph}</Typography>
+    <Typography level="h3">I am headline 3</Typography>
     <Typography>{Paragraph}</Typography>
   </>
 );
