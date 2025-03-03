@@ -90,7 +90,7 @@ export default function Header({
             <Typography
               level="h3"
               sx={{
-                fs: "1rem",
+                fontSize: "1rem",
                 p: 0,
                 m: 0,
                 ...HIDE_MOBILE,
