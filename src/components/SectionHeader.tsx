@@ -15,7 +15,7 @@ export default function SectionHeader({
   return (
     <Box>
       {tagLine && (
-        <Typography level="h3" sx={{ p: 0 }}>
+        <Typography level="h3" sx={{ p: 0, fontSize: "clamp(0.8rem, 7vw, 1.2rem)" }}>
           {tagLine}
         </Typography>
       )}
